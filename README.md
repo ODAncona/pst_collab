@@ -12,6 +12,7 @@ Le but de ce repo est de remettre au propre les séries d'exercices du cours PST
 
 * src => dossier avec les fichier LaTex triés par dossier
 * dst => dossier avec tous les pdf
+* photos => dossier avec touts les développements 
 
 
-Merci de votre collaboration ! N'hésitez pas à ouvrir un issue s'il y a une erreur quelquepart
+Merci de votre collaboration ! N'hésitez pas à ouvrir un issue s'il y a une erreur quelquepart ou proposer votre méthode de résolution si vous avez utilisé une autre manière.
