@@ -11,11 +11,19 @@ Le but de ce repo est de remettre au propre les séries d'exercices du cours PST
 ## Comment contribuer
 
 ### Rédaction
-1. Installer LaTex 
-2. Fork du repository en local
-3. Création d'une branche en local
-4. Modification des documents
-5. Pull Request
+1. Installer une distribution Tex tel que tex-live ou miketex 
+  ```
+  sudo apt install texlive-latex-extra
+  ```
+2. Installer les packages nécessaires 
+  ```
+  sudo apt-get install -y texlive-pstricks
+  sudo apt-get install texlive-lang-french 
+  ```
+3. Fork du repository en local
+4. Création d'une branche en local
+5. Modification des documents
+6. Pull Request
 
 ### Résolution
 1. Résoudre l'exercice 
