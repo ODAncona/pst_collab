@@ -1,19 +1,31 @@
-\documentclass[a4paper,11pt]{report}
-\usepackage{amsmath}
+\documentclass[11pt,a4paper]{report}
+
+%
+% Packages
+%
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amsthm,amssymb}
 \usepackage[svgnames]{xcolor}
 \usepackage[english,french]{babel}
-\usepackage{amsthm}
-\usepackage{amssymb}
 \usepackage{multicol}
 \usepackage{pstricks,pst-node,pst-text,pst-poly,pst-3d}
-\usepackage[utf8]{inputenc}
 \usepackage{enumitem}
 \usepackage{sidenotes}
+
+%
+% Constant and Variables
+%
 \setlength{\textwidth}{175mm}
 \setlength{\textheight}{255mm}
 \setlength{\oddsidemargin}{-10mm}
 \setlength{\topmargin}{-15mm}
 \setlength{\parskip}{0.2cm}
+
+\definecolor{vertfonce}{rgb}{0,0.5,0}
+
+%
+% Commands
 %
 \newcommand{\ds}{\displaystyle}
 \newcommand{\scr}{\scriptscriptstyle}
@@ -32,9 +44,17 @@
 	{\end{list}}
 %\pagenumbering{roman}
 %\setcounter{page}{1}
+
 %
-\theoremstyle{definition}
-\newtheorem{exo}{Exercice}
+\newcounter{num}
+\newcommand{\exo}{\addtocounter{num}{1}\noindent{\bf{Exercice \thenum}}\\[-1mm]}
+%
+
+%
+\newcommand{\donnee}[1]{\\{DonnÃ©e: } \emph{#1}}
+%
+
+
 %
 % Math
 %
@@ -61,8 +81,7 @@
 \newcommand{\med}{{\rm med}}
 \newcommand{\tr}{{\rm tr}}
 \newcommand{\T}{{\text{\tiny \rm T}}}
-\newcommand{\minfty}{- \, \infty}
-\def\transf{\quad\smash{\mathop{\longrightarrow}\limits_{}^{S}}\quad} 
+\newcommand{\minf}{- \, \infty}
 \newcommand{\intervalle}[4]{\mathopen{#1}#2\mathpunct{},#3\mathclose{#4}}
 \newcommand{\intervalleff}[2]{\intervalle{[}{#1}{#2}{]}}
 \newcommand{\intervalleof}[2]{\intervalle{]}{#1}{#2}{]}}
@@ -72,74 +91,91 @@
 \newcommand{\separation}{{\begin{center}\rule{10cm}{0.25pt}\end{center}}\noindent}
 %
 \frenchspacing
-%
-\definecolor{vertfonce}{rgb}{0,0.5,0}
-%
-\begin{document}
-%
-\thispagestyle{empty}
-%
-\noindent {\sc HEIG--VD} \hfill Probabilités et Statistique\newline 
-\noindent {Corrigé Etudiant} \hfill 2021-2022\newline
-\hrule
-\vspace{3mm}
-\noindent {\bf Thème : probabilités élémentaires} \hfill Solutions de la série~1
-\vspace{5mm}
-\hrule
-\vspace{7mm}
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-\noindent {\bf Exercice 1}\\[-3mm]
-\begin{enumerate}[label=\alph*), parsep=0cm, itemsep=3mm, topsep=3mm]
-	\item 
-	\begin{itemize}
-		\item[--] $0.455$;
-		\item[--] $0.555$;
-		\item[--] $0.305$.
-	\end{itemize}
-	\item équiprobabilité
-\end{enumerate}
-\vspace{1mm}
-\noindent {\bf Exercice 2}\\[-3mm]
-\begin{multicols}{3}
-\begin{enumerate}[label=\alph*), parsep=0cm, itemsep=3mm, topsep=3mm]
-	\item $0.1$
-	\item $0.3$
-	\item $0.2$
-\end{enumerate}
-\end{multicols}
-\vspace{1mm}
-\noindent {\bf Exercice 3}\\[-3mm]
-\begin{multicols}{2}
-\begin{enumerate}[label=\alph*), parsep=1mm, itemsep=3mm, topsep=3mm]
-	\item\label{q.quatrieme} $\left( \dfrac{5}{6} \right)^{10}$
-	\item $1 - \left( \dfrac{5}{6} \right)^{10}$ 
-\end{enumerate}
-\end{multicols}
-\vspace{1mm}
-\noindent {\bf Exercice 4}\\[-3mm]
-\begin{enumerate}[label=\alph*), parsep=0cm, itemsep=3mm, topsep=3mm]
-	\item $P(A) = p$ \hspace{5mm} $P(B) = 2p$ \hspace{5mm} $P(A \cup B) = 0.28$
-	\item $p = 0.1$
-\end{enumerate}
-\vspace{1mm}
-\noindent {\bf Exercice 5}\\[-5mm]
-\begin{enumerate}[label=\alph*), parsep=0cm, itemsep=3mm, topsep=5mm]
-\item $0.49$
-\item $0.23$
-\end{enumerate}
-\separation
-%
-% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%
-\vfill
-\hrule
-\vspace{2mm}
-\noindent {\tiny Corrigé Etudiant - TIC} \hfill {\tt \tiny \today}
-\end{document}
 
-%\vfill
-%$\mbox{}$ \hspace{16cm} ./..
-\clearpage
+
+\begin{document}
+	%
+	% Header
+	%
+	\noindent {\sc HEIG--VD} \hfill ProbabilitÃ©s et Statistique\newline 
+	\noindent {CorrigÃ© Etudiant} \hfill 2021-2022\newline
+	\hrule
+	\vspace{3mm}
+	\noindent {\bf ThÃ¨me : probabilitÃ©s conditionnelles et indÃ©pendance} \hfill Solution de la SÃ©rie 2
+	\vspace{5mm}
+	\hrule
+	\vspace{7mm}
+	
+	%
+	% Exercice 1
+	%
+	\exo
+	\donnee{}
+	
+	\begin{enumerate}[label=\alph*)]
+		\item 
+		\begin{itemize}
+			\item[--] $0.455$;
+			\item[--] $0.555$;
+			\item[--] $0.305$.
+		\end{itemize}
+		\item Ã©quiprobabilitÃ©
+	\end{enumerate}
+	\vspace{1mm}
+	
+	%
+	% Exercice 2
+	%
+	\exo
+	\donnee{}
+	\begin{multicols}{3}
+		\begin{enumerate}[label=\alph*), parsep=0cm, itemsep=3mm, topsep=3mm]
+			\item $0.1$
+			\item $0.3$
+			\item $0.2$
+		\end{enumerate}
+	\end{multicols}
+	\vspace{1mm}
+	
+	%
+	% Exercice 3
+	%
+	\exo
+	\donnee{}
+	\begin{multicols}{2}
+		\begin{enumerate}[label=\alph*), parsep=1mm, itemsep=3mm, topsep=3mm]
+			\item\label{q.quatrieme} $\left( \dfrac{5}{6} \right)^{10}$
+			\item $1 - \left( \dfrac{5}{6} \right)^{10}$ 
+		\end{enumerate}
+	\end{multicols}
+	\vspace{1mm}
+	
+	%
+	% Exercice 4
+	%
+	\exo
+	\donnee{}
+	\begin{enumerate}[label=\alph*), parsep=0cm, itemsep=3mm, topsep=3mm]
+		\item $P(A) = p$ \hspace{5mm} $P(B) = 2p$ \hspace{5mm} $P(A \cup B) = 0.28$
+		\item $p = 0.1$
+	\end{enumerate}
+	\vspace{1mm}
+	
+	%
+	% Exercice 5
+	%
+	\exo
+	\donnee{}
+	\begin{enumerate}[label=\alph*), parsep=0cm, itemsep=3mm, topsep=5mm]
+		\item $0.49$
+		\item $0.23$
+	\end{enumerate}
+	
+	%
+	% Footer
+	%
+	\vfill
+	\hrule
+	\vspace{2mm}
+	\noindent {\tiny CorrigÃ© Etudiant - TIC} \hfill {\tt \tiny \today}
+\end{document}
