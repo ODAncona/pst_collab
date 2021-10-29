@@ -1,97 +1,4 @@
-\documentclass[11pt,a4paper]{report}
-
-%
-% Packages
-%
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath,amsthm,amssymb}
-\usepackage[svgnames]{xcolor}
-\usepackage[english,french]{babel}
-\usepackage{multicol}
-\usepackage{pstricks,pst-node,pst-text,pst-poly,pst-3d}
-\usepackage{enumitem}
-\usepackage{sidenotes}
-
-%
-% Constant and Variables
-%
-\setlength{\textwidth}{175mm}
-\setlength{\textheight}{255mm}
-\setlength{\oddsidemargin}{-10mm}
-\setlength{\topmargin}{-15mm}
-\setlength{\parskip}{0.2cm}
-
-\definecolor{vertfonce}{rgb}{0,0.5,0}
-
-%
-% Commands
-%
-\newcommand{\ds}{\displaystyle}
-\newcommand{\scr}{\scriptscriptstyle}
-\newcommand{\bs}[1]{\ensuremath{\boldsymbol{#1}}}
-\renewcommand{\leq}{\leqslant}
-\newenvironment{refer} 
-{
-	\begin{list}
-		{}
-		{
-			\setlength{\labelwidth}{.5em}
-			\setlength{\leftmargin}{0.4cm}
-			\setlength{\itemsep}{0cm}
-		} 
-	}
-	{\end{list}}
-%\pagenumbering{roman}
-%\setcounter{page}{1}
-
-%
-\newcounter{num}
-\newcommand{\exo}{\addtocounter{num}{1}\noindent{\bf{Exercice \thenum}}\\[-1mm]}
-%
-
-%
-\newcommand{\donnee}[1]{\\{Donnée: } \emph{#1}}
-%
-
-
-%
-% Math
-%
-\newcommand{\Real}{\mathbb R}
-\newcommand{\RPlus}{\Real^{+}}
-\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
-\newcommand{\abs}[1]{\left\vert#1\right\vert}
-\newcommand{\setn}[1]{\left\{#1\right\}_{\scriptscriptstyle n \ge 1}}
-\newcommand{\set}[1]{\left\{#1\right\}}
-\newcommand{\seq}[1]{\left<#1\right>}
-\newcommand{\eps}{\varepsilon}
-\newcommand{\To}{\longrightarrow}
-\newcommand{\Prob}{\rm{P}}
-\newcommand{\F}{\mathcal{F}}
-\newcommand{\h}{\mathcal{H}}
-\newcommand{\M}{\mathcal{M}}
-\newcommand{\N}{\mathcal{N}}
-\newcommand{\E}{{\rm E}}
-\newcommand{\Hnull}{{\rm H}_{0}}
-\newcommand{\Hone}{{\rm H}_{1}}
-\newcommand{\Var}{{\rm Var}}
-\newcommand{\Cov}{{\rm Cov}}
-\newcommand{\sign}{{\rm sign}}
-\newcommand{\med}{{\rm med}}
-\newcommand{\tr}{{\rm tr}}
-\newcommand{\T}{{\text{\tiny \rm T}}}
-\newcommand{\minf}{- \, \infty}
-\newcommand{\intervalle}[4]{\mathopen{#1}#2\mathpunct{},#3\mathclose{#4}}
-\newcommand{\intervalleff}[2]{\intervalle{[}{#1}{#2}{]}}
-\newcommand{\intervalleof}[2]{\intervalle{]}{#1}{#2}{]}}
-\newcommand{\intervallefo}[2]{\intervalle{[}{#1}{#2}{[}}
-\newcommand{\intervalleoo}[2]{\intervalle{]}{#1}{#2}{[}}   
-%
-\newcommand{\separation}{{\begin{center}\rule{10cm}{0.25pt}\end{center}}\noindent}
-%
-\frenchspacing
-
+\input{../structure.tex}
 
 \begin{document}
 	%
@@ -111,16 +18,7 @@
 	%
 	\exo
 	\donnee{}
-	
-	\begin{enumerate}[label=\alph*)]
-		\item 
-		\begin{itemize}
-			\item[--] $0.455$;
-			\item[--] $0.555$;
-			\item[--] $0.305$.
-		\end{itemize}
-		\item équiprobabilité
-	\end{enumerate}
+
 	\vspace{1mm}
 	
 	%
@@ -128,13 +26,7 @@
 	%
 	\exo
 	\donnee{}
-	\begin{multicols}{3}
-		\begin{enumerate}[label=\alph*), parsep=0cm, itemsep=3mm, topsep=3mm]
-			\item $0.1$
-			\item $0.3$
-			\item $0.2$
-		\end{enumerate}
-	\end{multicols}
+	
 	\vspace{1mm}
 	
 	%
@@ -142,12 +34,7 @@
 	%
 	\exo
 	\donnee{}
-	\begin{multicols}{2}
-		\begin{enumerate}[label=\alph*), parsep=1mm, itemsep=3mm, topsep=3mm]
-			\item\label{q.quatrieme} $\left( \dfrac{5}{6} \right)^{10}$
-			\item $1 - \left( \dfrac{5}{6} \right)^{10}$ 
-		\end{enumerate}
-	\end{multicols}
+
 	\vspace{1mm}
 	
 	%
@@ -155,10 +42,7 @@
 	%
 	\exo
 	\donnee{}
-	\begin{enumerate}[label=\alph*), parsep=0cm, itemsep=3mm, topsep=3mm]
-		\item $P(A) = p$ \hspace{5mm} $P(B) = 2p$ \hspace{5mm} $P(A \cup B) = 0.28$
-		\item $p = 0.1$
-	\end{enumerate}
+
 	\vspace{1mm}
 	
 	%
@@ -166,10 +50,7 @@
 	%
 	\exo
 	\donnee{}
-	\begin{enumerate}[label=\alph*), parsep=0cm, itemsep=3mm, topsep=5mm]
-		\item $0.49$
-		\item $0.23$
-	\end{enumerate}
+	
 	
 	%
 	% Footer
