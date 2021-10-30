@@ -1,10 +1,10 @@
-\documentclass[11pt,a4paper]{report}
+\documentclass[11pt,a4paper]{article}
 
 %
 % Packages
 %
-\usepackage[T1]{fontenc}
-\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage[utf8]{inputenc} % Required for inputting international characters
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage[svgnames]{xcolor}
 \usepackage[english,french]{babel}
@@ -15,7 +15,7 @@
 \usepackage{graphicx} % Required to insert images
 \usepackage{array}
 \usepackage{booktabs} % Required for better horizontal rules in tables
-
+\usepackage{titlesec} % Required for modifying sections
 
 %
 % Constant and Variables
@@ -29,35 +29,16 @@
 \definecolor{vertfonce}{rgb}{0,0.5,0}
 
 %
-% Commands
+% Custom commands
 %
+
 \newcommand{\ds}{\displaystyle}
 \newcommand{\scr}{\scriptscriptstyle}
 \newcommand{\bs}[1]{\ensuremath{\boldsymbol{#1}}}
-\renewcommand{\leq}{\leqslant}
-\newenvironment{refer} 
-{
-	\begin{list}
-		{}
-		{
-			\setlength{\labelwidth}{.5em}
-			\setlength{\leftmargin}{0.4cm}
-			\setlength{\itemsep}{0cm}
-		} 
-	}
-	{\end{list}}
-%\pagenumbering{roman}
-%\setcounter{page}{1}
 
 %
-\newcounter{num}
-\newcommand{\exo}{\addtocounter{num}{1}\noindent{\bf{Exercice \thenum}}\\[-1mm]}
+\newcommand{\separation}{{\begin{center}\rule{10cm}{0.25pt}\end{center}}\noindent} % crée une barre
 %
-
-%
-\newcommand{\donnee}[1]{\\{Donnée: } \emph{#1}}
-%
-
 
 %
 % Math
@@ -91,7 +72,52 @@
 \newcommand{\intervalleof}[2]{\intervalle{]}{#1}{#2}{]}}
 \newcommand{\intervallefo}[2]{\intervalle{[}{#1}{#2}{[}}
 \newcommand{\intervalleoo}[2]{\intervalle{]}{#1}{#2}{[}}   
+
 %
-\newcommand{\separation}{{\begin{center}\rule{10cm}{0.25pt}\end{center}}\noindent}
+% Section
 %
+\titleformat
+{\section} % Section type being modified
+[block] % Shape type, can be: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
+{\Large\bfseries} % Format of the whole section
+{\assignmentQuestionName~\thesection} % Format of the section label
+{6pt} % Space between the title and label
+{} % Code before the label
+
+\titlespacing{\section}{0pt}{0.5\baselineskip}{0.5\baselineskip} % Spacing around section titles, the order is: left, before and after
+
+%
+%	Custom Exercice Environnment
+%
+\newcommand{\assignmentQuestionName}{Exercice} % The word to be used as a prefix to question numbers
+
+% Environment to be used for each question in the assignment
+\newenvironment{exo}{
+	\vspace{0.5\baselineskip} % Whitespace before the question
+	\section{} % Blank section title (e.g. just Exercice 2)
+}
+
+%------------------------------------------------
+
+% Environment for subquestions, takes 1 argument - the name of the section
+\newenvironment{subexo}[1]{
+	\subsection{#1}
+}{
+}
+
+%------------------------------------------------
+
+% Command to print a question sentence
+\newcommand{\donnee}[1]{
+	{Donnée: } 
+	\emph{#1}
+	\vspace{0.5\baselineskip} % Whitespace afterwards
+}
+
+%------------------------------------------------
+
+% Command to print a box that breaks across pages with the question answer
+\newcommand{\answer}[1]{#1}
+%------------------------------------------------
+
 \frenchspacing
