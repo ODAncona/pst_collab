@@ -3,7 +3,7 @@ Le but de ce repo est de remettre au propre les séries d'exercices du cours PST
 
 ## Structure de l'espace
 
-* [src](./src) => dossier avec les fichier LaTex triés par dossier test
+* [src](./src) => dossier avec les fichier LaTex triés par dossier
 * [dst](./dst) => dossier avec tous les pdf
 * [photos](./photos) => dossier avec tous les développements (Une image par exercice s.v.p.)
 * [data](./data) => dossier contenant les données des séries
@@ -29,6 +29,10 @@ Le but de ce repo est de remettre au propre les séries d'exercices du cours PST
 1. Résoudre l'exercice 
 2. prendre une photo
 3. placer la photo dans le dossier de la série avec le nom de fichier: *exercice<noExercice>_<prenom>.xyz*
+  
+  
+### Astuces
+  Si vous souhaitez déplacer tous les fichiers pdf dans le dossier dst en une seule commande vous pouvez utiliser depuis le dossier src `find -name *.pdf -exec mv -t ../dst {} + `
 
 
 Merci de votre collaboration ! N'hésitez pas à ouvrir un issue s'il y a une erreur quelquepart ou proposer votre méthode de résolution si vous avez utilisé une autre manière.
