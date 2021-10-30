@@ -87,7 +87,9 @@
 \newcommand{\intervalleff}[2]{\intervalle{[}{#1}{#2}{]}}
 \newcommand{\intervalleof}[2]{\intervalle{]}{#1}{#2}{]}}
 \newcommand{\intervallefo}[2]{\intervalle{[}{#1}{#2}{[}}
-\newcommand{\intervalleoo}[2]{\intervalle{]}{#1}{#2}{[}}   
+\newcommand{\intervalleoo}[2]{\intervalle{]}{#1}{#2}{[}}
+\newcommand*\conj[1]{\overline{#1}}
+\newcommand*\mean[1]{\overline{#1}} 
 
 %
 % Section
@@ -99,12 +101,24 @@
 {\assignmentQuestionName~\thesection} % Format of the section label
 {6pt} % Space between the title and label
 {} % Code before the label
-
 \titlespacing{\section}{0pt}{0.5\baselineskip}{0.5\baselineskip} % Spacing around section titles, the order is: left, before and after
 
 %
-%	Custom Exercice Environnment
+% Subsection
 %
+\titleformat
+{\subsection} % Section type being modified
+[block] % Shape type, can be: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
+{} % Format of the whole section
+{\alph{subsection})} % Format of the section label
+{4pt} % Space between the title and label
+{} % Code before the label
+\titlespacing{\subsection}{0pt}{0.5\baselineskip}{0.5\baselineskip} % Spacing around section titles, the order is: left, before and after
+
+
+%
+%	Custom Exercice Environnment
+%------------------------------------------------
 \newcommand{\assignmentQuestionName}{Exercice} % The word to be used as a prefix to question numbers
 
 % Environment to be used for each question in the assignment
@@ -113,24 +127,17 @@
 	\section{} % Blank section title (e.g. just Exercice 2)
 }
 
-%------------------------------------------------
-
-% Environment for subquestions, takes 1 argument - the name of the section
-\newenvironment{subexo}[1]{
-	\subsection{#1}
-}{
-}
-
-%------------------------------------------------
-
 % Command to print a question sentence
 \newcommand{\donnee}[1]{
-	{Donnée: } 
+	\noindent{Donnée: }
 	\emph{#1}
 	\vspace{0.5\baselineskip} % Whitespace afterwards
 }
 
-%------------------------------------------------
+% Environment for subexercice, takes 1 argument - the name of the section
+\newenvironment{subexo}[1]{
+	\subsection{\itshape{#1}}
+}
 
 % Command to print a box that breaks across pages with the question answer
 \newcommand{\answer}[1]{#1}

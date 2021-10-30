@@ -7,16 +7,24 @@
 	%
 	\begin{exo}
 		\donnee{À vue d’oeil, il fait beau sept fois sur dix à Yverdon–les–Bains le jour de la rentrée académique. Votre enseignant de probabilités et statistique dispose de deux sources de prévisions météorologiques indépendantes: le service météorologique suisse qui se trompe deux fois sur cent et une grenouille verte, qui se trompe une fois sur vingt.}
-	
-		\begin{enumerate}[label=\alph*)]
-			\item 
-			\begin{itemize}
-				\item[--] $0.455$;
-				\item[--] $0.555$;
-				\item[--] $0.305$.
-			\end{itemize}
-			\item équiprobabilité
-		\end{enumerate}
+		\begin{subexo}{À l’aide de l’énoncé, donner les probabilités}
+			\begin{multicols}{4}
+				\begin{enumerate}
+					\item	$P(F|E)$
+					\item	$P(F|\conj{E})$
+					\item	$P(G|E)$
+					\item	$P(G|\conj{E})$
+				\end{enumerate}
+			\end{multicols}
+		\end{subexo}
+		\begin{subexo}{Calculez les probabilités}
+			\begin{multicols}{2}
+				\begin{enumerate}
+					\item $P(\conj{F}\cap G|E)$
+					\item $P(\conj{F}\cap G|\conj{E})$
+				\end{enumerate}
+			\end{multicols}
+		\end{subexo}
 	\end{exo}
 	
 	%
@@ -24,26 +32,30 @@
 	%
 	\begin{exo}
 		\donnee{Pour éviter un incendie, une alarme a été installée dans la cuisine d’un restaurant australien.Supposons que la probabilité que l’alarme retentisse par erreur un jour donné sans qu’il y ait incendie est 0.01 et celle qu’elle retentisse en cas d’incendie vaut 0.95. De plus, on suppose que la probabilité qu’un incendie se déclare dans la cuisine un jour donné est 0.005}
-		\begin{multicols}{3}
-		\begin{enumerate}[label=\alph*), parsep=0cm, itemsep=3mm, topsep=3mm]
-			\item $0.1$
-			\item $0.3$
-			\item $0.2$
-		\end{enumerate}
-		\end{multicols}
+		\begin{subexo}{	Calculer la probabilité que l'alarme retentisse un jour donné.}
+			sdaf
+		\end{subexo}
+		\begin{subexo}{		Déterminer la probabilité qu'un incendie se déclare dans la cuisine un jour donné en sachant que l'alarme l'a signalé.}
+			adsf
+		\end{subexo}
 	\end{exo}
 	
 	%
 	% Exercice 3
 	%
 	\begin{exo}
-		\donnee{Un signal binaire valant 0 ou 1 est envoyé par câble électrique. La transmission est affectée par des perturbations dites “bruits” : le signal 0 est reçu en 1 avec probabilité 0.2 et le signal 1 est enregistré en 0 avec probabilité 0.1.}
-		\begin{multicols}{2}
-		\begin{enumerate}[label=\alph*), parsep=1mm, itemsep=3mm, topsep=3mm]
-			\item\label{q.quatrieme} $\left( \dfrac{5}{6} \right)^{10}$
-			\item $1 - \left( \dfrac{5}{6} \right)^{10}$ 
-		\end{enumerate}
-		\end{multicols}
+		\donnee{Un signal binaire valant 0 ou 1 est envoyé par câble électrique. La transmission est affectée par des perturbations dites “bruits” : le signal 0 est reçu en 1 avec probabilité 0.2 et le signal 1 est enregistré en 0 avec probabilité 0.1. Définissons les événements suivants:
+		\\ $E_0$ : "le signal émis vaut 0"
+		\\ $E_1$ : "le signal émis vaut 1"
+		\\ $R_0$ : "le signal reçu vaut 0"
+		\\ $R_1$ : "le signal reçu vaut 1" 
+		\\En supposant que le système de transmission émet le signal 0 avec probabilité 0.45, calculer les probabilités de transmission correctes }
+		\begin{subexo}{$P(E_0 | R_0)$}
+			sdaf
+		\end{subexo}
+		\begin{subexo}{$P(E_1 | R_1)$}
+			sdaf
+		\end{subexo}
 	\end{exo}
 	%
 	% Exercice 4
@@ -54,21 +66,14 @@
 			\\• B : “le premier dé donne 4”;
 			\\• C : “la somme des faces vaut 7”.
 			Les événements A et B sont-ils indépendants ? Qu’en est-il des événements B et C ? Donnez une interprétation intuitive des résultats.}
-		\begin{enumerate}[label=\alph*), parsep=0cm, itemsep=3mm, topsep=3mm]
-			\item $P(A) = p$ \hspace{5mm} $P(B) = 2p$ \hspace{5mm} $P(A \cup B) = 0.28$
-			\item $p = 0.1$
-		\end{enumerate}
-	
+		\begin{subexo}{Les événements A et B sont-ils indépendants ? Qu’en est-il des événements B et C ? Donnez une interprétation intuitive des résultats.}
+		\end{subexo}
 	\end{exo}
 	%
 	% Exercice 5
 	%
 	\begin{exo}
-		\donnee{Un système électronique est formé des composants A, B, C et D placés selon le dispositif de la Figure 1. On suppose que les composants fonctionnent indépendamment les uns des autres et leurs probabilités de fonctionnement sont toutes égales à 0.8. Le système est opérationnel s’il existe un chemin entre les points I et O ne comprenant que des composants qui fonctionnent. Calculer la probabilité que le système soit défaillant.}
-		\begin{enumerate}[label=\alph*), parsep=0cm, itemsep=3mm, topsep=5mm]
-		\item $0.49$
-		\item $0.23$
-		\end{enumerate}
+		\donnee{Un système électronique est formé des composants A, B, C et D placés selon le dispositif de la Figure 1. On suppose que les composants fonctionnent indépendamment les uns des autres et leurs probabilités de fonctionnement sont toutes égales à 0.8. Le système est opérationnel s’il existe un chemin entre les points I et O ne comprenant que des composants qui fonctionnent. Calculer la probabilité que le système soit défaillant.\\\includegraphics[width=10cm]{ex5.png}}
 	\end{exo}
 	%
 	% Exercice 6
