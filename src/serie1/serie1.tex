@@ -1,5 +1,5 @@
 \input{../structure.tex}
-
+\graphicspath{ {./} }
 
 
 \begin{document}
@@ -19,36 +19,78 @@
 					\bottomrule
 				\end{tabular}
 			\end{center}}
-		\begin{subexo}{Calculer les probabilités d’avoir choisi une personne}
+		Rappel : $P(A) = \frac{\text{Nombre de cas favorables}}{\text{Nombre de cas possibles}}$
+		\begin{subexo}{Calculer les probabilités d’avoir choisi une personne :}
 		\begin{enumerate}[parsep=0cm, itemsep=3mm, topsep=3mm]
-			\item dont le service est qualifié bon
-			\item non diplômée
-			\item diplômé dont le service est bon 
-		\end{enumerate}
-			\begin{enumerate}[label=\alph*)]
-				\item 
-				\begin{itemize}
-					\item[--] $0.455$;
-					\item[--] $0.555$;
-					\item[--] $0.305$.
-				\end{itemize}
-				\item équiprobabilité
+			\item dont le service est qualifié bon.
+			\begin{enumerate}
+				\item[ ] \text{Ici on réunis les bons services des personnes avec et sans diplôme. On a donc : } 
+				\item[ ] \begin{center}{Cas fav.} = 61 + 30 = 91\end{center} 
+				\item[ ] \text{Ensuite on calcul les cas possibles. On a donc : } 
+				\item[ ] \begin{center}{Cas tot.} = 61 + 28 + 30 + 81 = 200\end{center} 
+				\item[ ] \text{On applique la formule et on obtient : } 
+				\item[ ] \begin{center}$\dfrac{91}{200} = 0,455$\end{center} 
 			\end{enumerate}
+			\item non diplômée.
+			\begin{enumerate}
+				\item[ ] \text{Ici on réunis les personnes sans diplôme, peut importe la qualité du service. On a donc : } 
+				\item[ ] \begin{center}{Cas fav.} = 30 + 81 = 111\end{center} 
+				\item[ ] \text{Ensuite on calcul les cas possibles. On a donc : } 
+				\item[ ] \begin{center}{Cas tot.} = 61 + 28 + 30 + 81 = 200\end{center} 
+				\item[ ] \text{On applique la formule et on obtient : } 
+				\item[ ] \begin{center}$\dfrac{111}{200} = 0,555$\end{center} 
+			\end{enumerate}
+			\item diplômé dont le service est bon.
+			\begin{enumerate}
+				\item[ ] \text{Ici on réunis les personnes avec diplôme et une bonne qualité de service. On a donc : } 
+				\item[ ] \begin{center}{Cas fav.} = 61\end{center} 
+				\item[ ] \text{Ensuite on calcul les cas possibles. On a donc : } 
+				\item[ ] \begin{center}{Cas tot.} = 61 + 28 + 30 + 81 = 200\end{center} 
+				\item[ ] \text{On applique la formule et on obtient : } 
+				\item[ ] \begin{center}$\dfrac{61}{200} = 0,305$\end{center} 
+			\end{enumerate}
+		\end{enumerate}
 		\end{subexo}
-		
+		\begin{subexo}{Quelle hypothèse faites-vous pour déterminer ces probabilités ?}
+			Toutes les probabilités sont \textbf{équiprobables}. C'est pour cela qu l'on peut utiliser la formule énnoncée dans les rappels de l'exercice.
+			
+		\end{subexo}
 	\end{exo}
 	%
 	% Exercice 2
 	%
 	\begin{exo}
-		\donnee{fg}
-		\begin{multicols}{3}
+		\donnee{Sur le chemin de l’école, un étudiant de la HEIG–VD s’arrête toujours à la même station-service pour faire le plein d’essence. Il a constaté que les deux pompes de la station notées A et B ont la même probabilité d’être occupées. De plus, la probabilité que l’une des deux pompes au moins soit utilisée vaut 0.9 et celle que toutes les deux soient simultanément occupées est 0.5.}
+
+		Pour faciliter la compréhension de cet exercice, on peut réaliser un diagramme de Venn.
+		\begin{center}\includegraphics[scale=0.5]{ex2-diagrammeVenn}\end{center}
+		Premièrement, posons que :
+		\begin{multicols}{4}
 			\begin{enumerate}[label=\alph*), parsep=0cm, itemsep=3mm, topsep=3mm]
-				\item $0.1$
-				\item $0.3$
-				\item $0.2$
+				\item[ ] AO = La pompe A est occupée
+				\item[ ] AL = La pompe A est libre
+				\item[ ] BO = La pompe B est occupée
+				\item[ ] BL = La pompe B est libre
 			\end{enumerate}
 		\end{multicols}
+		\begin{center}$\Omega = \{(AL,BL),(AO,BL),(AL,BO),(AO,BO)\}$ \text{, évènements pas équiprobable !!!}\end{center}
+		On sait que les probabilités que A soit libre sont les mêmes pour B. On note :
+		\begin{center}$P(\{AL\}) = P(\{BL\})$\end{center}
+		On sait aussi que :
+		\begin{enumerate}
+			\item[ ] $P(\text{au moins une pompe soite occupée}) = 0.9$
+			\item[ ] $P(\text{les deux pompes soient occupées}) = 0.5$
+			\item[ ] $P(\Omega) = 1$
+		\end{enumerate}
+		\begin{subexo}{Calculer la probabilité que les deux pompes soient disponibles.}
+			Parmis les évènements probables on sait que : 
+			\begin{center}$P\{(AO,BL),(AL,BO),(AO,BO)\} = 0.9$\end{center}
+			Puisque nous cherchons la probabilité du couple manquant $(P\{(AL,BL)\})$, on pose :
+			\begin{center}$P(\Omega) = P\{(AL,BL)\} + P\{(AO,BL),(AL,BO),(AO,BO)\}$\end{center}
+			En remplaçant les probabilités connues par leurs valeurs, on obtient :
+			\begin{center}$1 = P\{(AL,BL)\} + 0.9$\end{center}
+			On peut donc en conclure que $P\{(AL,BL)\}  = 0.1$ et donc que la probabilité que la pompe A et B soient libre est de $0.1$
+		\end{subexo}
 	\end{exo}
 	
 	%
