@@ -16,14 +16,92 @@
 					\item	$P(G|\conj{E})$
 				\end{enumerate}
 			\end{multicols}
+			Pour commencer, modélisons la situation par un arbre
+			\begin{center}
+				\begin{tikzpicture}[grow=right]
+					\node[] {}
+					child {
+						node[] {$\conj{E}$}        
+						child {
+							node[end, label=right: {$G$}] {}
+							edge from parent
+							node[below]  {$\frac{19}{20}$}
+						}
+						child {
+							node[end, label=right: {$F$}] {}
+							edge from parent
+							node[below]  {$\frac{49}{50}$}
+						}
+						edge from parent 
+						node[below]  {$\frac{3}{10}$}
+					}
+					child {
+						node[] {$E$}        
+						child {
+							node[end, label=right: {$G$}] {}
+							edge from parent
+							node[below]  {$\frac{19}{20}$}
+						}
+						child {
+							node[end, label=right: {$F$}] {}
+							edge from parent
+							node[below]  {$\frac{49}{50}$}
+						}
+						edge from parent         
+						node[below]  {$\frac{7}{10}$}
+					};
+				\end{tikzpicture}
+		\end{center}
+		De cet arbre découle:
+		\begin{enumerate}
+			\item	$P(F|E) = \dfrac{49}{50} = 0,98$
+			\item	$P(F|\conj{E}) = 1 - \dfrac{49}{50} = 0,02 $
+			\item	$P(G|E) = \dfrac{19}{20} = 0,95$
+			\item	$P(G|\conj{E}) = 1 - \dfrac{19}{20} = 0,05$
+		\end{enumerate}
 		\end{subexo}
 		\begin{subexo}{Calculez les probabilités}
 			\begin{multicols}{2}
 				\begin{enumerate}
 					\item $P(\conj{F}\cap G|E)$
-					\item $P(\conj{F}\cap G|\conj{E})$
+					\item $P(\conj{F}\cap G|\conj{E}) ou P(F\cap \conj{G}|\conj{E})$
 				\end{enumerate}
 			\end{multicols}
+		\begin{flushleft}
+		Nous pouvons distribuer les deux membres de l'inclusion grâce à leur indépendance, $P(\conj{F}\cap G|E) = \dfrac{P(\conj{F}\cap G \cap E) }{P(E)} = P(\conj{F}|E) \times P(G|E) $ Nous avons déjà $P(G|E) = \dfrac{19}{20} = 0,95$. Il nous manque $P(\conj{F}|E)$ que l'on peut retrouver à l'aide de $1 - P(F|E) = 0,02$ Ces branches peuvent être détaillée dans l'arbre ci-dessous:
+		\end{flushleft}
+		\begin{center}
+			\tikzstyle{level 1}=[level distance=6.5cm, sibling distance=2.5cm]
+			\begin{tikzpicture}[grow=right]
+				\node[] {$E$}
+				child {
+					node[end, label=right: {$\conj{F}$}] {}
+					edge from parent
+					node[below]  {$\frac{1}{50}$}
+				}
+				child {
+					node[end, label=right: {$F$}] {}
+					edge from parent
+					node[below]  {$\frac{49}{50}$}
+				}
+				child {
+					node[end, label=right: {$G$}] {}
+					edge from parent
+					node[above]  {$\frac{19}{20}$}
+				}
+				child {
+					node[end, label=right: {$\conj{G}$}] {}
+					edge from parent
+					node[above]  {$\frac{1}{20}$}
+				};
+			\end{tikzpicture}
+		\end{center}
+		\begin{flushleft}
+		Finalement, nous avons $P(\conj{F}\cap G|E) = P(\conj{F}|E) \times P(G|E) = \frac{1}{50} \times \frac{19}{20} = 0,019$\\
+		De manière similaire, $P(\conj{F}\cap G|\conj{E}) = P(\conj{F}|\conj{E}) \times P(G|\conj{E}) = \frac{1}{50} \times \frac{19}{20} = 0,019$
+		\\
+		De manière similaire, $P(F\cap \conj{G}|\conj{E}) = P(F|\conj{E}) \times P(\conj{G}|\conj{E}) = \frac{49}{50} \times \frac{1}{20} = 0,049$
+		\end{flushleft}
 		\end{subexo}
 	\end{exo}
 	

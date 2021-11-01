@@ -16,6 +16,9 @@
 \usepackage{array}
 \usepackage{booktabs} % Required for better horizontal rules in tables
 \usepackage{titlesec} % Required for modifying sections
+\usepackage{tikz}
+\usetikzlibrary{trees}
+\usepackage{verbatim}
 
 %
 % Constant and Variables
@@ -25,8 +28,13 @@
 \setlength{\oddsidemargin}{-10mm}
 \setlength{\topmargin}{-15mm}
 \setlength{\parskip}{0.2cm}
-
 \definecolor{vertfonce}{rgb}{0,0.5,0}
+% Set the overall layout of the tree
+\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
+\tikzstyle{level 2}=[level distance=3.5cm, sibling distance=2cm]
+% Define styles for bags and leafs
+\tikzstyle{bag} = [text width=4em, text centered]
+\tikzstyle{end} = [circle, minimum width=3pt,fill, inner sep=0pt]
 
 %
 % Custom commands
