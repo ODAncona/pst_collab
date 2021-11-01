@@ -68,10 +68,10 @@
 				\end{enumerate}
 			\end{multicols}
 		\begin{flushleft}
-		Nous pouvons distribuer les deux membres de l'inclusion grâce à leur indépendance, $P(\conj{F}\cap G|E) = \dfrac{P(\conj{F}\cap G \cap E) }{P(E)} = P(\conj{F}|E) \times P(G|E) $ Nous avons déjà $P(G|E) = \dfrac{19}{20} = 0,95$. Il nous manque $P(\conj{F}|E)$ que l'on peut retrouver à l'aide de $1 - P(F|E) = 0,02$ Ces branches peuvent être détaillée dans l'arbre ci-dessous:
+		Nous pouvons distribuer les deux membres de l'inclusion grâce à leur indépendance, $P(\conj{F}\cap G|E) = \dfrac{P(\conj{F}\cap G \cap E) }{P(E)} = P(\conj{F}|E) \cdot P(G|E) $ Nous avons déjà $P(G|E) = \dfrac{19}{20} = 0,95$. Il nous manque $P(\conj{F}|E)$ que l'on peut retrouver à l'aide de $1 - P(F|E) = 0,02$ Ces branches peuvent être détaillée dans l'arbre ci-dessous:
 		\end{flushleft}
 		\begin{center}
-			\tikzstyle{level 1}=[level distance=6.5cm, sibling distance=2.5cm]
+			\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
 			\begin{tikzpicture}[grow=right]
 				\node[] {$E$}
 				child {
@@ -97,10 +97,10 @@
 			\end{tikzpicture}
 		\end{center}
 		\begin{flushleft}
-		Finalement, nous avons $P(\conj{F}\cap G|E) = P(\conj{F}|E) \times P(G|E) = \frac{1}{50} \times \frac{19}{20} = 0,019$\\
-		De manière similaire, $P(\conj{F}\cap G|\conj{E}) = P(\conj{F}|\conj{E}) \times P(G|\conj{E}) = \frac{1}{50} \times \frac{19}{20} = 0,019$
+		Finalement, nous avons $P(\conj{F}\cap G|E) = P(\conj{F}|E) \cdot P(G|E) = \frac{1}{50} \cdot \frac{19}{20} = 0,019$\\
+		De manière similaire, $P(\conj{F}\cap G|\conj{E}) = P(\conj{F}|\conj{E}) \cdot P(G|\conj{E}) = \frac{1}{50} \cdot \frac{19}{20} = 0,019$
 		\\
-		De manière similaire, $P(F\cap \conj{G}|\conj{E}) = P(F|\conj{E}) \times P(\conj{G}|\conj{E}) = \frac{49}{50} \times \frac{1}{20} = 0,049$
+		De manière similaire, $P(F\cap \conj{G}|\conj{E}) = P(F|\conj{E}) \cdot P(\conj{G}|\conj{E}) = \frac{49}{50} \cdot \frac{1}{20} = 0,049$
 		\end{flushleft}
 		\end{subexo}
 	\end{exo}
@@ -111,10 +111,55 @@
 	\begin{exo}
 		\donnee{Pour éviter un incendie, une alarme a été installée dans la cuisine d’un restaurant australien.Supposons que la probabilité que l’alarme retentisse par erreur un jour donné sans qu’il y ait incendie est 0.01 et celle qu’elle retentisse en cas d’incendie vaut 0.95. De plus, on suppose que la probabilité qu’un incendie se déclare dans la cuisine un jour donné est 0.005}
 		\begin{subexo}{	Calculer la probabilité que l'alarme retentisse un jour donné.}
-			sdaf
+			\begin{flushleft}
+			Commençons par modéliser la situation avec $I$ = "Incendie" et $A$ = "Alarme" nous pouvons alors distinguer les cas suivants:
+			\end{flushleft}
+			\begin{center}
+			\begin{tikzpicture}[grow=right]
+				\node[] {}
+				child {
+					node[] {$\conj{I}$}        
+					child {
+						node[end, label=right: {$\conj{A}$}] {}
+						edge from parent
+						node[below]  {$\frac{99}{100}$}
+					}
+					child {
+						node[end, label=right: {$A$}] {}
+						edge from parent
+						node[above]  {$\frac{1}{100}$}
+					}
+					edge from parent 
+					node[below]  {$\frac{995}{1000}$}
+				}
+				child {
+					node[] {$I$}        
+					child {
+						node[end, label=right: {$\conj{A}$}] {}
+						edge from parent
+						node[below]  {$\frac{5}{100}$}
+					}
+					child {
+						node[end, label=right: {$A$}] {}
+						edge from parent
+						node[above]  {$\frac{95}{100}$}
+					}
+					edge from parent         
+					node[above]  {$\frac{5}{1000}$}
+				};
+			\end{tikzpicture}
+			\begin{flushleft}
+				La probabilité que l'alarme retentisse $P(A)$ est la probabilité qu'elle retentisse peu importe si il y a un incendie ou non. Cela peut se traduire par: $P(A) = P(A \cap I) + P(A \cap \conj{I})$ Calculons:
+				\\$P(A \cap I) = \dfrac{5}{1000} \cdot \dfrac{95}{100} = \dfrac{19}{4000}$
+				\\$P(A \cap \conj{I}) = \dfrac{995}{1000} \cdot \dfrac{1}{100} = \dfrac{199}{20000}$
+				\\ le total vaudra donc $\dfrac{19}{4000} + \dfrac{199}{20000} = 0,0147$
+			\end{flushleft}
+		\end{center}
 		\end{subexo}
-		\begin{subexo}{		Déterminer la probabilité qu'un incendie se déclare dans la cuisine un jour donné en sachant que l'alarme l'a signalé.}
-			adsf
+		\begin{subexo}{Déterminer la probabilité qu'un incendie se déclare dans la cuisine un jour donné en sachant que l'alarme l'a signalé.}
+			\begin{flushleft}
+				La probabilité qu'il y ait un incendie sachant que l'alarme sonne $P(I|A)$ se calcule en utilisant la formule de Bayes car nous connaissons $P(A|I) = 0,95$. Soit $P(I|A) = \dfrac{P(A|I)\cdot P(I)}{P(A)}$ Numériquement $\dfrac{0,95 \cdot 0,005}{0,0147} = 0,323$
+			\end{flushleft}
 		\end{subexo}
 	\end{exo}
 	
