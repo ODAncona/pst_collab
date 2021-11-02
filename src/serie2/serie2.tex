@@ -16,7 +16,7 @@
 					\item	$P(G|\conj{E})$
 				\end{enumerate}
 			\end{multicols}
-			Pour commencer, modélisons la situation par un arbre
+			Pour commencer, modélisons la situation par un arbre avec $G=$ "la grenouille a raison" et $F=$ "la météo a raison" et $E=$ "il fait beau".
 			\begin{center}
 				\begin{tikzpicture}[grow=right]
 					\node[] {}
@@ -25,12 +25,12 @@
 						child {
 							node[end, label=right: {$G$}] {}
 							edge from parent
-							node[below]  {$\frac{19}{20}$}
+							node[below]  {$\frac{1}{20}$}
 						}
 						child {
 							node[end, label=right: {$F$}] {}
 							edge from parent
-							node[below]  {$\frac{49}{50}$}
+							node[below]  {$\frac{1}{50}$}
 						}
 						edge from parent 
 						node[below]  {$\frac{3}{10}$}
@@ -64,11 +64,11 @@
 			\begin{multicols}{2}
 				\begin{enumerate}
 					\item $P(\conj{F}\cap G|E)$
-					\item $P(\conj{F}\cap G|\conj{E}) ou P(F\cap \conj{G}|\conj{E})$
+					\item $P(\conj{F}\cap G|\conj{E})$
 				\end{enumerate}
 			\end{multicols}
 		\begin{flushleft}
-		Nous pouvons distribuer les deux membres de l'inclusion grâce à leur indépendance, $P(\conj{F}\cap G|E) = \dfrac{P(\conj{F}\cap G \cap E) }{P(E)} = P(\conj{F}|E) \cdot P(G|E) $ Nous avons déjà $P(G|E) = \dfrac{19}{20} = 0,95$. Il nous manque $P(\conj{F}|E)$ que l'on peut retrouver à l'aide de $1 - P(F|E) = 0,02$ Ces branches peuvent être détaillée dans l'arbre ci-dessous:
+		Nous pouvons distribuer les deux membres de l'inclusion grâce à leur indépendance, $P(\conj{F}\cap G|E) = \dfrac{P(\conj{F}\cap G \cap E) }{P(E)} = P(\conj{F}|E) \cdot P(G|E) $. Nous avons déjà $P(G|E) = \dfrac{19}{20} = 0,95$. Il nous manque $P(\conj{F}|E)$ que l'on peut retrouver à l'aide de $1 - P(F|E) = 0,02$ Ces branches peuvent être détaillées dans l'arbre ci-dessous:
 		\end{flushleft}
 		\begin{center}
 			\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
@@ -98,9 +98,7 @@
 		\end{center}
 		\begin{flushleft}
 		Finalement, nous avons $P(\conj{F}\cap G|E) = P(\conj{F}|E) \cdot P(G|E) = \frac{1}{50} \cdot \frac{19}{20} = 0,019$\\
-		De manière similaire, $P(\conj{F}\cap G|\conj{E}) = P(\conj{F}|\conj{E}) \cdot P(G|\conj{E}) = \frac{1}{50} \cdot \frac{19}{20} = 0,019$
-		\\
-		De manière similaire, $P(F\cap \conj{G}|\conj{E}) = P(F|\conj{E}) \cdot P(\conj{G}|\conj{E}) = \frac{49}{50} \cdot \frac{1}{20} = 0,049$
+		De manière similaire, $P(\conj{F}\cap G|\conj{E}) = P(\conj{F}|\conj{E}) \cdot P(G|\conj{E}) = \frac{49}{50} \cdot \frac{1}{20} = 0,049$
 		\end{flushleft}
 		\end{subexo}
 	\end{exo}
