@@ -16,7 +16,7 @@
 					\item	$P(G|\conj{E})$
 				\end{enumerate}
 			\end{multicols}
-			Pour commencer, modélisons la situation par un arbre avec $G=$ "la grenouille a raison" et $F=$ "la météo a raison" et $E=$ "il fait beau".
+			Pour commencer, modélisons la situation par un arbre avec $G=$ "la grenouille annonce beau" et $F=$ "la météo annonce le beau" et $E=$ "il fait beau".
 			\begin{center}
 				\begin{tikzpicture}[grow=right]
 					\node[] {}
@@ -171,11 +171,63 @@
 		\\ $R_0$ : "le signal reçu vaut 0"
 		\\ $R_1$ : "le signal reçu vaut 1" 
 		\\En supposant que le système de transmission émet le signal 0 avec probabilité 0.45, calculer les probabilités de transmission correctes }
+	\begin{flushleft}
+		Modélisons la situation à l'aide d'un arbre nous pouvons déjà remplir les branches $P(R_1 | E_0) = 0,2$ et $P(R_0 | E_1) = 0,1$ ainsi que $P(E_0) = 0,45$ et $P(E_1) = 0,55$. Ensuite, nous pouvons déduire de là $ P(R_0 | E_0) = 1 - 0,2 = 0,8 $ et $P(R_1 | E_1) = 1 - 0,1 = 0,9$.
+	\end{flushleft}
+	\begin{center}
+		\begin{tikzpicture}[grow=right]
+			\node[] {}
+			child {
+				node[] {$E_0$}        
+				child {
+					node[end, label=right: {$R_0$}] {}
+					edge from parent
+					node[below]  {$\frac{4}{5}$}
+				}
+				child {
+					node[end, label=right: {$R_1$}] {}
+					edge from parent
+					node[above]  {$\frac{1}{5}$}
+				}
+				edge from parent 
+				node[below]  {$\frac{9}{20}$}
+			}
+			child {
+				node[] {$E_1$}        
+				child {
+					node[end, label=right: {$R_0$}] {}
+					edge from parent
+					node[below]  {$\frac{1}{10}$}
+				}
+				child {
+					node[end, label=right: {$R_1$}] {}
+					edge from parent
+					node[above]  {$\frac{9}{10}$}
+				}
+				edge from parent         
+				node[above]  {$\frac{11}{20}$}
+			};
+		\end{tikzpicture}
+	\end{center}
 		\begin{subexo}{$P(E_0 | R_0)$}
-			sdaf
+			\begin{flushleft}
+				Afin de résoudre cette équation, il faut utiliser la formule de Bayes totale:
+				\\$P(E_0|R_0) = \dfrac{P(R_0|E_0)\cdot P(E_0)}{P(R_0)}$ avec $P(R_0) = P(R_0 | E_0) \cdot P(E_0) + P(R_0 | E_1)\cdot P(E_1)$
+				\\Numériquement:
+				\\$P(R_0) = \dfrac{4}{5}\cdot\dfrac{9}{20} +\dfrac{1}{10}\cdot\dfrac{11}{20} = 0,415$
+				\\$P(R_0|E_0)\cdot P(E_0) =  \dfrac{4}{5}\cdot \dfrac{9}{20} = \dfrac{9}{25} = 0,36$
+				\\ Finalement, $P(E_0|R_0) = \dfrac{0,36}{0,415} = 0,867$
+			\end{flushleft}
 		\end{subexo}
 		\begin{subexo}{$P(E_1 | R_1)$}
-			sdaf
+			\begin{flushleft}
+				De manière similaire:
+				\\$P(E_1|R_1) = \dfrac{P(R_1|E_1)\cdot P(E_1)}{P(R_1)}$ avec $P(R_1) = P(R_1 | E_0) \cdot P(E_0) + P(R_1 | E_1)\cdot P(E_1)$
+				\\Numériquement:
+				\\$P(R_1) = \dfrac{1}{5}\cdot\dfrac{9}{20} +\dfrac{9}{10}\cdot\dfrac{11}{20} = 0,415$
+				\\$P(R_1|E_1)\cdot P(E_1) =  \dfrac{9}{10}\cdot \dfrac{11}{20} = 0,495$
+				\\ Finalement, $P(E_0|R_0) = \dfrac{0,495}{0,585} = 0,846$
+			\end{flushleft}
 		\end{subexo}
 	\end{exo}
 	%

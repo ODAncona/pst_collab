@@ -1,6 +1,7 @@
 # pst_collab
 Le but de ce repo est de remettre au propre les séries d'exercices du cours PST-2021 de manière collaborative.
 
+
 ## Structure de l'espace
 
 * [src](./src) => dossier avec les fichier LaTex triés par dossier
