@@ -68,7 +68,7 @@
 				\end{enumerate}
 			\end{multicols}
 		\begin{flushleft}
-		Nous pouvons distribuer les deux membres de l'inclusion grâce à leur indépendance, $P(\conj{F}\cap G|E) = \dfrac{P(\conj{F}\cap G \cap E) }{P(E)} = P(\conj{F}|E) \cdot P(G|E) $. Nous avons déjà $P(G|E) = \dfrac{19}{20} = 0,95$. Il nous manque $P(\conj{F}|E)$ que l'on peut retrouver à l'aide de $1 - P(F|E) = 0,02$ Ces branches peuvent être détaillées dans l'arbre ci-dessous:
+		Nous pouvons distribuer les deux membres de l'inclusion grâce à leur indépendance conditionnelle, $P(\conj{F}\cap G|E) = \dfrac{P(\conj{F}\cap G \cap E) }{P(E)} = P(\conj{F}|E) \cdot P(G|E) $. Nous avons déjà $P(G|E) = \dfrac{19}{20} = 0,95$. Il nous manque $P(\conj{F}|E)$ que l'on peut retrouver à l'aide de $1 - P(F|E) = 0,02$ Ces branches peuvent être détaillées dans l'arbre ci-dessous:
 		\end{flushleft}
 		\begin{center}
 			\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
@@ -238,8 +238,19 @@
 			\\• A : “la somme des faces vaut 6”;
 			\\• B : “le premier dé donne 4”;
 			\\• C : “la somme des faces vaut 7”.
-			Les événements A et B sont-ils indépendants ? Qu’en est-il des événements B et C ? Donnez une interprétation intuitive des résultats.}
+			\\Les événements A et B sont-ils indépendants ? Qu’en est-il des événements B et C ? Donnez une interprétation intuitive des résultats.}
 		\begin{subexo}{Les événements A et B sont-ils indépendants ? Qu’en est-il des événements B et C ? Donnez une interprétation intuitive des résultats.}
+			\begin{flushleft}
+				L'univers $\Omega = \{(1,1),...,(6,6)\}$ Pour répondre savoir si un événement $A$ et $B$ sont indépendant, on peut utiliser la définition: $A $ indépendant $B \Leftrightarrow P(A | B) = \dfrac{P(A \cap B)}{P(B)}=P(A)$ Commençons par calculer les probabilités:
+				\\$P(A) = \dfrac{5}{36}$ car sur 36 jets possible il y a $\{(1,5),(2,4),(3,3),(4,2),(5,1)\}$
+				\\$P(B) = \dfrac{1}{6}$
+				\\$P(C) = \dfrac{1}{6}$ car sur 36 jets possibles il y a $\{(1,6),(2,5),(3,4),(4,3),(2,5),(6,1)\}$
+				\\$P(A \cap B) = \dfrac{1}{36}$ c'est à dire le cas $\{(4,2)\}$
+				\\Vérifions l'indépendance $P(A | B) = \dfrac{\frac{1}{36}}{\frac{1}{6}}=\dfrac{1}{6} \neq P(A)$ Donc A et B sont dépendants.
+				\\ Procédons à la suite:
+				\\$P(B\cap C) = \dfrac{1}{36}$ c'est à dire le cas $\{(4,3)\}$
+				\\Vérifions l'indépendance $P(B | C) = \dfrac{\frac{1}{36}}{\frac{1}{6}}=\dfrac{1}{6} = P(C)$ Donc B et C sont indépendants
+			\end{flushleft}
 		\end{subexo}
 	\end{exo}
 	%
