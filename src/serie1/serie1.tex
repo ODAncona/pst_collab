@@ -97,13 +97,40 @@
 	% Exercice 3
 	%
 	\begin{exo}
-		\donnee{df}
-		\begin{multicols}{2}
-			\begin{enumerate}[label=\alph*), parsep=1mm, itemsep=3mm, topsep=3mm]
-				\item\label{q.quatrieme} $\left( \dfrac{5}{6} \right)^{10}$
-				\item $1 - \left( \dfrac{5}{6} \right)^{10}$ 
+		\donnee{Dix personnes attendent l'ascenseur au rdc d'un immeuble formé de 6 étages (sans le rez-de-chaussée). La probabilité qu'une personne quitte l'ascenseur à l'un des six étages est la m
+		même pour tous les étages. Observateurs de l'expérience, nous supposons que les personnes sorent au hasard de 
+		l'ascenseur indépendamment les une des autres; une fois sorties, elles n'y rentrent plus.}
+		\begin{subexo} {Déterminer la probabilité qu’aucune personne sortira de l’ascenseur au 5ième étage.}
+			La probabilité peut être vu comme $\frac{\text{nombre de cas favorables (1)}}{\text{nombre de cas totaux (2)}}$
+			
+				\begin{enumerate}[label=(\arabic*)]
+					\item Les cas favorables sont les cas où les personnes descendent à un autre étage que le 5ième.
+					Autrement dit combien existe-il de possibilité pour 10 personnes de sortir sur les 5 autres étages ?
+					Pour la première personne, elle a 5 choix (les 5 étages qui restent.) la seconde a aussi 5 choix etc etc.
+					On a donc $5^{10}$ cas favorables
+					\item les cas totaux sont simplement $6^{10}$ puisque on autorise à sortir à l'étage 5
+				\end{enumerate}
+				On a donc $$a) \left(\frac{5}{6}\right)^{10}$$
+			
+		\end{subexo}
+		\begin{subexo}{Déduire de a) la probabilité que l'ascenseur s'arretera au 5ième étage}
+				On nous demande ici de compter la probabilité qu'on s'arrête au 5ième étage. C'est à dire qu'une personne s'y arrete ou que 2 personnes s'y arretent ou que 3 personnes etc etc.
+			Il est plus simple de faire l'inverse : 1 - la probabilité que personne ne s'arrete au 5ième. Et cette dernière probabilité est justement celle que nous avons calculer en (a)
+			$$b)1 - \left( \dfrac{5}{6} \right)^{10}$$
+			\end{subexo}
+		\begin{subexo}{Une autre manière de voir l'exo a)}
+			Nous avons l'équi-probabilité: $ P({\text{sortir à l'étage i}}) = \frac{1}{6}$
+			\begin{enumerate}
+				\item 			Soit $A_1$ l'évenement la personne 1 de sortir à l'étage 5. 
+\item 			Soit $A_k$ l'évenement la personne $k, k\in 1..10$ de sortir à l'étage 5.
+
 			\end{enumerate}
-		\end{multicols}
+			Nous avons $\overline{A_k}$ l'évenement "la personne $k$ ne sorte PAS à l'étage 5" $P(\overline{A_k}) = 1 -\frac{1}{6}$
+			Pour que personne ne sortent à l'étage 5 il faut que la personne 1 ne sorte pas à l'étage 5 ET que la personne 2 ne sorte pas etc.
+			\newline
+			Puisque les évènements sont indépendents, on a $$P(A \cap B) =P(A) \dot{ P(B)} $$
+			donc $$ P\left( \bigcap_{k=1}^{10}\overline{A_{k}}\right) = \left(\frac{5}{6}\right)^{10}$$
+		\end{subexo}
 	\end{exo}
 	
 	%
