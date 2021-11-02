@@ -241,15 +241,15 @@
 			\\Les événements A et B sont-ils indépendants ? Qu’en est-il des événements B et C ? Donnez une interprétation intuitive des résultats.}
 		\begin{subexo}{Les événements A et B sont-ils indépendants ? Qu’en est-il des événements B et C ? Donnez une interprétation intuitive des résultats.}
 			\begin{flushleft}
-				L'univers $\Omega = \{(1,1),...,(6,6)\}$ Pour répondre savoir si un événement $A$ et $B$ sont indépendant, on peut utiliser la définition: $A $ indépendant $B \Leftrightarrow P(A | B) = \dfrac{P(A \cap B)}{P(B)}=P(A)$ Commençons par calculer les probabilités:
+				L'univers $\Omega = \{(1,1),...,(6,6)\}$ Pour répondre savoir si un événement $A$ et $B$ sont indépendant, on peut utiliser la définition: $A$, $B$ indépendant $\Leftrightarrow P(A | B) = \dfrac{P(A \cap B)}{P(B)}=P(A)$ Commençons par calculer les probabilités:
 				\\$P(A) = \dfrac{5}{36}$ car sur 36 jets possible il y a $\{(1,5),(2,4),(3,3),(4,2),(5,1)\}$
 				\\$P(B) = \dfrac{1}{6}$
 				\\$P(C) = \dfrac{1}{6}$ car sur 36 jets possibles il y a $\{(1,6),(2,5),(3,4),(4,3),(2,5),(6,1)\}$
 				\\$P(A \cap B) = \dfrac{1}{36}$ c'est à dire le cas $\{(4,2)\}$
-				\\Vérifions l'indépendance $P(A | B) = \dfrac{\frac{1}{36}}{\frac{1}{6}}=\dfrac{1}{6} \neq P(A)$ Donc A et B sont dépendants.
+				\\Vérifions l'indépendance de A et B: $P(A | B) = \dfrac{\frac{1}{36}}{\frac{1}{6}}=\dfrac{1}{6} \neq P(A)$ Donc A et B sont dépendants.
 				\\ Procédons à la suite:
 				\\$P(B\cap C) = \dfrac{1}{36}$ c'est à dire le cas $\{(4,3)\}$
-				\\Vérifions l'indépendance $P(B | C) = \dfrac{\frac{1}{36}}{\frac{1}{6}}=\dfrac{1}{6} = P(C)$ Donc B et C sont indépendants
+				\\Vérifions l'indépendance de B et C: $P(B | C) = \dfrac{\frac{1}{36}}{\frac{1}{6}}=\dfrac{1}{6} = P(C)$ Donc B et C sont indépendants
 			\end{flushleft}
 		\end{subexo}
 	\end{exo}
@@ -258,6 +258,18 @@
 	%
 	\begin{exo}
 		\donnee{Un système électronique est formé des composants A, B, C et D placés selon le dispositif de la Figure 1. On suppose que les composants fonctionnent indépendamment les uns des autres et leurs probabilités de fonctionnement sont toutes égales à 0.8. Le système est opérationnel s’il existe un chemin entre les points I et O ne comprenant que des composants qui fonctionnent. Calculer la probabilité que le système soit défaillant.\\\includegraphics[width=10cm]{ex5.png}}
+		\begin{flushleft}
+			Prenons $A$ = "A fonctionne" et $\conj{A}$ ="A ne fonctionne pas". Pour que le système soit défaillant, il faut que la partie du bas et la partie du haut soit disfonctionnelle simultanément. Pour que la partie du haut soit disfonctionnelle il faut que soit A soit (B ou C) ne fonctionne pas ce qui se traduit par $\conj{A} \cup (\conj{B}\cap \conj{C})$. Donc la probabilité pour que le système soit défaillant: $P\Big(\conj{D}\cap \big( \conj{A} \cup (\conj{B}\cap \conj{C})\big)\Big) $ 
+			\\Développement:
+			\\$= P(\conj{A} \cup (\conj{B} \cap \conj{C}))$ 
+			\\$= P(\conj{A}) + P(\conj{B} \cap \conj{C}) - P(\conj{A} \cap (\conj{B} \cap \conj{C})$ 
+			\\$= P(\conj{A}) + P(\conj{B})P(\conj{C}) -  P(\conj{A})\cdot P(\conj{B})P(\conj{C})$
+			\\$= P(\conj{A}) + P(\conj{B})P(\conj{C}) \cdot \big(1-P(\conj{A})\big)$
+			\\$= 0,2 + 0,04 \cdot 0,8 = 0,232$
+			\\ Alors
+			\\$P\Big(\conj{D}\cap \big( \conj{A} \cup (\conj{B}\cap \conj{C})\big)\Big) $
+			\\$= P(\conj{D})\cdot P(\conj{A} \cup (\conj{B} \cap \conj{C})) = 0,2 \cdot 0,232  = 0,0464$ 
+		\end{flushleft}
 	\end{exo}
 	%
 	% Exercice 6
@@ -267,6 +279,9 @@
 			\\\indent$p_i$ : probabilité qu’un mot choisi au hasard dans un message électronique est le mot i en sachant que le message est un spam
 			\\\indent$q_i$ : probabilité qu'un mot choisi au hasard dans un message électronique est le mot i en sachant que le message n’est pas un spam
 			\\valent respectivement $p_1$ = 0.05, $p_2$ = 0.1 et $q_1$ = 0.001, $q_2$ = 0.5. Supposons que dans chaque type de messages électroniques, les mots de la liste se trouvent indépendamment les uns des autres dans les messages. La proportion de messages spam reçus par la société Gloup vaut 0.9. En sachant que les mots “viagra” et “miracle” figurent tous les deux une fois dans le même message électronique, déterminer la probabilité qu’il s’agisse d’un spam.}
+		\begin{flushleft}
+			$0,989$
+		\end{flushleft}
 	\end{exo}
 	%
 	% Exercice 7
