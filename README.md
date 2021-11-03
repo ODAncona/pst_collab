@@ -5,9 +5,9 @@ Le but de ce repo est de remettre au propre les séries d'exercices du cours PST
 ## Structure du repo
 
 * [src](./src) => dossier avec les fichier LaTex triés par dossier
-* [corrigés](./dst) => dossier avec tous les pdf
+* [corrigés](./corriges) => dossier avec tous les pdf
 * [photos](./photos) => dossier avec tous les développements (Une image par exercice s.v.p.)
-* [énoncés](./data) => dossier contenant les données des séries
+* [énoncés](./enonces) => dossier contenant les données des séries
 
 ## Comment contribuer
 
