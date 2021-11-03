@@ -91,6 +91,45 @@
 			\begin{center}$1 = P\{(AL,BL)\} + 0.9$\end{center}
 			On peut donc en conclure que $P\{(AL,BL)\}  = 0.1$ et donc que la probabilité que la pompe A et B soient libre est de $0.1$
 		\end{subexo}
+	\begin{subexo}{Déterminer la probabilité que la pompe A soit libre.}
+		Rappel : $P(A\cup B) = P(A) + P(B) - P(A \cap B)$ \\ \\ 
+		Premièrement, on pose la formule énoncée dans le rappel en remplaçant avec nos valeurs :
+		\begin{center}$P(AL\cup BL) = P(AL) + P(BL) - P(AL \cap BL)$\end{center}
+		Maintenant, essayons d'exprimer $P(AL\cup BL)$ avec ce que nous connaissons : \\
+		Avec la Loi de De Morgan on a : 
+		\begin{center}$P(\overline{AL\cup BL}) = P(\overline{AL} \cap \overline{BL}) = P(AO \cap BO)$\end{center}	
+		On sait que $P\{(AO,BO)\}=0.5$ donc que $P(AO \cap BO)=0.5$, on peut donc poser :
+		\begin{center}$P(\overline{AL\cup BL}) = 1 - P(AL \cup BL)$\end{center}
+		À présent on sait que :
+		\begin{enumerate}
+			\item[ ] $P(AL \cup BL) = 0.5$
+			\item[ ] $P(AL \cap BL) = 0.1$ , voir exercice $a)$
+		\end{enumerate}
+		On peut donc compléter la formule $P(AL\cup BL) = P(AL) + P(BL) - P(AL \cap BL)$ avec les valeurs : 
+		\begin{center}
+			$0.5 = P(AL) + P(BL) - 0.1$
+		\end{center}
+		Comme ennoncé en début d'exercice, on a $P(AL) = P(BL)$. On peut donc poser :
+		\begin{center}
+			$2P(AL) = 0.6$ \\ $P(AL) = 0.3$
+		\end{center}
+		On peut donc conclure que les probabilités que la pompe A soie libre sont de 0.3
+	\end{subexo}
+	\begin{subexo}{Calculer la probabilité que la pompe A soit occupée mais la pompe B disponible}
+		Posons simplement la somme des probabilités que A soit occupée 
+		\begin{center}
+			$P(AO) = P(AO \cap AO) + P(AO \cap BL)$
+		\end{center}
+		Sachant que $P(AL) = 0.3$ , on déduit que $P(AO) = 0.7$. On peut donc retourner la formule au-dessus pour obtenir :
+		\begin{center}
+			$P(AO \cap BL) = P(AO) - P(AO \cap AO)$
+		\end{center}
+	En remplaçant par les valeurs connues on a :
+	\begin{center}
+		$P(AO \cap BL) = 0.7 - 0.5 = 0.2$
+	\end{center}
+	On peut donc dire que la probabilité que la pompe A soit occupée et que la pompe B disponible est de $0.2$
+	\end{subexo}
 	\end{exo}
 	
 	%
@@ -178,7 +217,7 @@
 						Nous avons : $\Delta = b^2 -4ac = 9 -4\cdot 2\cdot 0.28$\newline
 						 et $\sqrt{\Delta} = 2.6$
 						 $$\delta^+ = \frac{-(-3) + 2.6}{2\cdot2} = 1.4$$
-						 $$\delta^+ = \frac{-(-3) - 2.6}{2\cdot2} = 0.1$$
+						 $$\delta^- = \frac{-(-3) - 2.6}{2\cdot2} = 0.1$$
 						$p$ étant une probabilité, son domaine de définition est : $\mathbb{D} = [0;1]$ et $\delta^+ \notin \mathbb{D}$ 
 						Donc $p = 0.1$
 		\end{subexo}
