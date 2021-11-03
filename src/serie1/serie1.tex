@@ -19,14 +19,14 @@
 					\bottomrule
 				\end{tabular}
 			\end{center}}
-		Rappel : $P(A) = \dfrac{\text{Nombre de cas favorables}}{\text{Nombre de cas possibles}}$
+		Rappel : $P(A) = \frac{\text{Nombre de cas favorables}}{\text{Nombre de cas possibles}}$
 		\begin{subexo}{Calculer les probabilités d’avoir choisi une personne :}
 		\begin{enumerate}[parsep=0cm, itemsep=3mm, topsep=3mm]
 			\item dont le service est qualifié bon.
 			\begin{enumerate}
 				\item[ ] \text{Ici on réunis les bons services des personnes avec et sans diplôme. On a donc : } 
 				\item[ ] \begin{center}{Cas fav.} = 61 + 30 = 91\end{center} 
-				\item[ ] \text{Ensuite on calcule les cas possibles. On a donc : } 
+				\item[ ] \text{Ensuite on calcul les cas possibles. On a donc : } 
 				\item[ ] \begin{center}{Cas tot.} = 61 + 28 + 30 + 81 = 200\end{center} 
 				\item[ ] \text{On applique la formule et on obtient : } 
 				\item[ ] \begin{center}$\dfrac{91}{200} = 0,455$\end{center} 
@@ -35,7 +35,7 @@
 			\begin{enumerate}
 				\item[ ] \text{Ici on réunis les personnes sans diplôme, peut importe la qualité du service. On a donc : } 
 				\item[ ] \begin{center}{Cas fav.} = 30 + 81 = 111\end{center} 
-				\item[ ] \text{Ensuite on calcule les cas possibles. On a donc : } 
+				\item[ ] \text{Ensuite on calcul les cas possibles. On a donc : } 
 				\item[ ] \begin{center}{Cas tot.} = 61 + 28 + 30 + 81 = 200\end{center} 
 				\item[ ] \text{On applique la formule et on obtient : } 
 				\item[ ] \begin{center}$\dfrac{111}{200} = 0,555$\end{center} 
@@ -44,7 +44,7 @@
 			\begin{enumerate}
 				\item[ ] \text{Ici on réunis les personnes avec diplôme et une bonne qualité de service. On a donc : } 
 				\item[ ] \begin{center}{Cas fav.} = 61\end{center} 
-				\item[ ] \text{Ensuite on calcule les cas possibles. On a donc : } 
+				\item[ ] \text{Ensuite on calcul les cas possibles. On a donc : } 
 				\item[ ] \begin{center}{Cas tot.} = 61 + 28 + 30 + 81 = 200\end{center} 
 				\item[ ] \text{On applique la formule et on obtient : } 
 				\item[ ] \begin{center}$\dfrac{61}{200} = 0,305$\end{center} 
@@ -91,45 +91,6 @@
 			\begin{center}$1 = P\{(AL,BL)\} + 0.9$\end{center}
 			On peut donc en conclure que $P\{(AL,BL)\}  = 0.1$ et donc que la probabilité que la pompe A et B soient libre est de $0.1$
 		\end{subexo}
-	\begin{subexo}{Déterminer la probabilité que la pompe A soit libre.}
-		Rappel : $P(A\cup B) = P(A) + P(B) - P(A \cap B)$ \\ \\ 
-		Premièrement, on pose la formule énoncée dans le rappel en remplaçant avec nos valeurs :
-		\begin{center}$P(AL\cup BL) = P(AL) + P(BL) - P(AL \cap BL)$\end{center}
-		Maintenant, essayons d'exprimer $P(AL\cup BL)$ avec ce que nous connaissons : \\
-		Avec la Loi de De Morgan on a : 
-		\begin{center}$P(\overline{AL\cup BL}) = P(\overline{AL} \cap \overline{BL}) = P(AO \cap BO)$\end{center}	
-		On sait que $P\{(AO,BO)\}=0.5$ donc que $P(AO \cap BO)=0.5$, on peut donc poser :
-		\begin{center}$P(\overline{AL\cup BL}) = 1 - P(AL \cup BL)$\end{center}
-		À présent on sait que :
-		\begin{enumerate}
-			\item[ ] $P(AL \cup BL) = 0.5$
-			\item[ ] $P(AL \cap BL) = 0.1$ , voir exercice $a)$
-		\end{enumerate}
-		On peut donc compléter la formule $P(AL\cup BL) = P(AL) + P(BL) - P(AL \cap BL)$ avec les valeurs : 
-		\begin{center}
-			$0.5 = P(AL) + P(BL) - 0.1$
-		\end{center}
-		Comme ennoncé en début d'exercice, on a $P(AL) = P(BL)$. On peut donc poser :
-		\begin{center}
-			$2P(AL) = 0.6$ \\ $P(AL) = 0.3$
-		\end{center}
-		On peut donc conclure que les probabilités que la pompe A soie libre sont de 0.3
-	\end{subexo}
-	\begin{subexo}{Calculer la probabilité que la pompe A soit occupée mais la pompe B disponible}
-		Posons simplement la somme des probabilités que A soit occupée 
-		\begin{center}
-			$P(AO) = P(AO \cap AO) + P(AO \cap BL)$
-		\end{center}
-		Sachant que $P(AL) = 0.3$ , on déduit que $P(AO) = 0.7$. On peut donc retourner la formule au-dessus pour obtenir :
-		\begin{center}
-			$P(AO \cap BL) = P(AO) - P(AO \cap AO)$
-		\end{center}
-	En remplaçant par les valeurs connues on a :
-	\begin{center}
-		$P(AO \cap BL) = 0.7 - 0.5 = 0.2$
-	\end{center}
-	On peut donc dire que les probabilités que la pompe A soit occupée mais que la pompe B disponible sont de $0.2$
-	\end{subexo}
 	\end{exo}
 	
 	%
@@ -140,7 +101,7 @@
 		même pour tous les étages. Observateurs de l'expérience, nous supposons que les personnes sorent au hasard de 
 		l'ascenseur indépendamment les une des autres; une fois sorties, elles n'y rentrent plus.}
 		\begin{subexo} {Déterminer la probabilité qu’aucune personne sortira de l’ascenseur au 5ième étage.}
-			La probabilité peut être vu comme $\dfrac{\text{nombre de cas favorables (1)}}{\text{nombre de cas totaux (2)}}$
+			La probabilité peut être vu comme $\frac{\text{nombre de cas favorables (1)}}{\text{nombre de cas totaux (2)}}$
 			
 				\begin{enumerate}[label=(\arabic*)]
 					\item Les cas favorables sont les cas où les personnes descendent à un autre étage que le 5ième.
@@ -160,14 +121,14 @@
 		\begin{subexo}{Une autre manière de voir l'exo a)}
 			Nous avons l'équi-probabilité: $ P({\text{sortir à l'étage i}}) = \frac{1}{6}$
 			\begin{enumerate}
-				\item 			Soit $A_1$ l'évenement la personne 1 de sortir à l'étage 5. 
-\item 			Soit $A_k$ l'évenement la personne $k, k\in 1..10$ de sortir à l'étage 5.
+				\item 			Soit $A_1$ l'évenement la personne 1 sort à l'étage 5. ($P(A_1) = \frac{1}{6}$)
+\item 			Soit $A_k$ l'évenement la personne $k, k\in 1..10$ sort à l'étage 5.
 
 			\end{enumerate}
 			Nous avons $\overline{A_k}$ l'évenement "la personne $k$ ne sorte PAS à l'étage 5" $P(\overline{A_k}) = 1 -\frac{1}{6}$
 			Pour que personne ne sortent à l'étage 5 il faut que la personne 1 ne sorte pas à l'étage 5 ET que la personne 2 ne sorte pas etc.
 			\newline
-			Puisque les évènements sont indépendents, on a $$P(A \cap B) =P(A) \dot{ P(B)} $$
+			Puisque les évènements sont indépendents, on a $$P(A \cap B) =P(A) \cdot{ P(B)} $$
 			donc $$ P\left( \bigcap_{k=1}^{10}\overline{A_{k}}\right) = \left(\frac{5}{6}\right)^{10}$$
 		\end{subexo}
 	\end{exo}
@@ -176,11 +137,51 @@
 	% Exercice 4
 	%
 	\begin{exo}
-		\donnee{df}
-		\begin{enumerate}[label=\alph*), parsep=0cm, itemsep=3mm, topsep=3mm]
-			\item $P(A) = p$ \hspace{5mm} $P(B) = 2p$ \hspace{5mm} $P(A \cup B) = 0.28$
-			\item $p = 0.1$
-		\end{enumerate}
+		\donnee{Tous les jours de la semaine, un enseignant se rend à la même heure à l'école où il enseigne en suivant
+		systématiquement le même chemin. Sur son trajet se trouvent deux carrefours où la circulation est réglée
+		par un feu de signalisation ; rouge ou orange, pas d’autres signaux lumineux. La probabilité que le feu du
+		premier carrefour soit au orange lors du passage de l’enseignant vaut p et celle du second 2p. De plus, la
+		probabilité qu’au moins un des deux feux soit orange lors du passage de l’enseignant est 0.28. On suppose
+		que les feux de signalisation des deux carrefours fonctionnent indépendamment l’un de l’autre.
+		Considérons les  événements :}
+		$$A : \text{“Le feu du premier carrefour est orange” et } B : \text{“Le feu du second carrefour est orange”.}$$
+		\begin{subexo}{Traduire l'énoncé en langage probabiliste à l'aide des événements énoncés ci-dessus}
+			
+			La probabilité que le feu du premier carrefour soit au orange lors du passage de l'enseignant vaut p.
+			$$P(A) = p$$
+			La probabilité que le feu du deuxième carrefour soit au orange lors du passage de l'enseignant vaut 2p.
+			$$P(B) = 2p$$
+			la
+			probabilité qu’au moins un des deux feux soit orange lors du passage de l’enseignant est 0.28
+			$$P(A\cup B) = 0.28$$
+			
+		\end{subexo}
+		\begin{subexo}{Calculer la probabilité p}
+			Puisque les événements sont indépendants, nous avons : 
+					\begin{align}
+						P(A \cap B) &= P(A) P(B)\\
+				&= p \cdot 2p\\
+				&= 2p^2
+					\end{align}
+				Nous savons aussi que
+					\begin{equation}
+						P(A \cup B) = P(A) + P(B) -P(A \cap B)
+					\end{equation}
+					L'équation (1) est vraie uniquement si les événements sont indépendants. Tandis que la (4) est toujours vrai !! 
+					\begin{align}
+						P(A \cup B) &= P(A) + P(B) -P(A \cap B)\\
+						 &= 0.28\\
+						 &= p + 2p - 2p^2
+					\end{align}
+					Nous devons donc trouver les solutions de l'équation quadratique suivante:
+					$$2p^2 - 3p + 0.28 = 0$$
+						Nous avons : $\Delta = b^2 -4ac = 9 -4\cdot 2\cdot 0.28$\newline
+						 et $\sqrt{\Delta} = 2.6$
+						 $$\delta^+ = \frac{-(-3) + 2.6}{2\cdot2} = 1.4$$
+						 $$\delta^+ = \frac{-(-3) - 2.6}{2\cdot2} = 0.1$$
+						$p$ étant une probabilité, son domaine de définition est : $\mathbb{D} = [0;1]$ et $\delta^+ \notin \mathbb{D}$ 
+						Donc $p = 0.1$
+		\end{subexo}
 	\end{exo}
 	
 	%
