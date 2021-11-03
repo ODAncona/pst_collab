@@ -2,12 +2,12 @@
 Le but de ce repo est de remettre au propre les séries d'exercices du cours PST-2021 de manière collaborative.
 
 
-## Structure de l'espace
+## Structure du repo
 
 * [src](./src) => dossier avec les fichier LaTex triés par dossier
-* [dst](./dst) => dossier avec tous les pdf
+* [corrigés](./dst) => dossier avec tous les pdf
 * [photos](./photos) => dossier avec tous les développements (Une image par exercice s.v.p.)
-* [data](./data) => dossier contenant les données des séries
+* [énoncés](./data) => dossier contenant les données des séries
 
 ## Comment contribuer
 
