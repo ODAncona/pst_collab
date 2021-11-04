@@ -1,16 +1,11 @@
 \begin{exo}
-    \donnee{dans une étude on s'intéresse à la capacité que possède un certain hacker pour trouver en un temps donné les mdp
-    permettant d'accéder à trois centres de calculs, La probabilité que le hacker trouve le mot de passe (mdp)des centres de calculs 
-    valent respectivement 0.22, 0.3 et 0.28. La probabilité qu’il
-    trouve le mot de passe des deux premiers centres est 0.11, celle pour le premier et le troisième vaut 0.14 et celle pour déterminer le mdp
-     du deuxième et du troisième centre est 0.1.
-     Finalement, le “hacker” identifie les trois mots de passe avec probabilité 0.06}
+    \donnee{dans une étude on s'intéresse à la capacité que possède un certain hacker pour trouver en un temps donné les mots de passe permettant d'accéder à trois centres de calculs, La probabilité que le hacker trouve le mot de passe des centres de calculs valent respectivement 0.22, 0.3 et 0.28. La probabilité qu’il trouve le mot de passe des deux premiers centres est 0.11, celle pour le premier et le troisième vaut 0.14 et celle pour déterminer le mot de passe du deuxième et du troisième centre est 0.1. Finalement, le “hacker” identifie les trois mots de passe avec probabilité 0.06}
 
-    Commencons par définir des 3 évènements.
+    Commencons par définir les 3 évènements:
     \begin{enumerate}
-        \item $A$ le/la hacker casse le mdp du centre 1
-        \item $B$ le hacker casse le mdp du centre 2
-        \item $C$  le hacker casse le mdp du centre 3
+        \item $A$ le hacker casse le mot de passe du centre 1
+        \item $B$ le hacker casse le mot de passe du centre 2
+        \item $C$ le hacker casse le mot de passe du centre 3
     \end{enumerate}
     Modélisons l'énoncé à partir de nos évènements:
     \begin{multicols}{2}
@@ -26,22 +21,21 @@
         \end{itemize}
     \end{multicols}
     \begin{subexo}{Calculer la probabilité que le hacker ne trouvera aucun mot de passe}
-        La proba de ne trouver aucun mdp est la situation où l'on ne trouve ni le mdp du centre 1, ni le mdp du centre 2, ni le mdp du centre 3.
-        ça revient à trouver la probabilité de tout les événements sauf ceux où un mdp ou plus sont trouvés Autrement dit $1 - P(A\cup B \cup C)$ 
+        La probabilité de ne trouver aucun mot de passe est la situation où l'on ne trouve ni le mot de passe du centre 1, ni le mot de passe du centre 2, ni le mot de passe du centre 3.Cela revient à trouver la probabilité de tout les événements sauf ceux où un mot de passe ou plus sont trouvés Autrement dit $1 - P(A\cup B \cup C)$ 
         \newline
         La probabilité de tous les événements = 1\newline
-        Et la probabilité  d'un mdp ou plus sont trouvés : $P(A\cup B \cup C)$
+        Et la probabilité d'un mot de passe ou plus sont trouvés : $P(A\cup B \cup C)$
         \newline Il faut donc calculer : 
         \begin{align*}
-            P(A\cup B \cup C) &= P(A) + P(B) + P(C) - P(A\cap B) - P(B\cap C) - P(A\cap C) + 4P(A\cap B \cap C)\\
+            P(A\cup B \cup C) &= P(A) + P(B) + P(C) - P(A\cap B) - P(B\cap C) - P(A\cap C) + P(A\cap B \cap C)\\
             &= 0.22 + 0.3 + 0.28 - 0.11 -0.1 - 0.14 + 0.06\\
             &= 0.51
         \end{align*}
         $$ 1- 0.51 = 0.49 $$
     \end{subexo}
-    \begin{subexo}{Déterminer la probabilité qu'il identifiera au minimum deux des trois mdp}
-        A nouveau représentons l'énoncer à l'aide nos événements:
-        Au minimum deux des trois mdp signifie qu'il trouve $A\text{ et } B $ ou $A$ et $C$ ou $B$ et $C$
+    \begin{subexo}{Déterminer la probabilité qu'il identifiera au minimum deux des trois mots de passe}
+        A nouveau, représentons l'énoncé à l'aide de nos évènements:
+        Au minimum deux des trois mots de passe signifie qu'il trouve $A\text{ et } B $ ou $A$ et $C$ ou $B$ et $C$
         Nous avons \begin{align*}
             P(A\cap B) + P(A\cap C) + P(B \cap C) - 2P(A\cap B \cap C) &= 0.35-2\cdot 0.06\\
             &= 0.23

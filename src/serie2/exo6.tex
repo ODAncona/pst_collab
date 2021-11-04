@@ -11,10 +11,11 @@
     \\$P(S) = 0.9$ et $P(\conj{S}) = 0.1$
     \\La probabilité cherchée est $P(S|M_1 \cap M_2)$ qui peut s'obtenir avec la formule de bayes totale:
     \\ $P(S|M_1 \cap M_2) = \dfrac{P(M_1 \cap M_2|S)\cdot P(S)}{P(M_1 \cap M_2)}$
-    \\ avec $P(M_1 \cap M_2)$
-    \\ $=P(M_1 \cap M_2 | S) \cdot P(S) + P(M_1 \cap M_2 | \conj{S})\cdot P(\conj{S})$
-    \\ $=P(M_1|S)\cdot P(M_2|S) \cdot P(S) + P(M_1| \conj{S}) \cdot P(M_2 | \conj{S})  \cdot  P(\conj{S})$
-    \\ $= P_1P_2 \cdot P(S) + Q_1Q_2\cdot P(\conj{S})$
+    \\ avec 
+    \begin{align*} P(M_1 \cap M_2)&=P(M_1 \cap M_2 | S) \cdot P(S) + P(M_1 \cap M_2 | \conj{S})\cdot P(\conj{S})
+     \\&=P(M_1|S)\cdot P(M_2|S) \cdot P(S) + P(M_1| \conj{S}) \cdot P(M_2 | \conj{S})  \cdot  P(\conj{S})
+     \\&= P_1P_2 \cdot P(S) + Q_1Q_2\cdot P(\conj{S})
+    \end{align*}
     \\ Numériquement,
     \\ $P(M_1 \cap M_2) = P_1P_2 \cdot P(S) + Q_1Q_2\cdot P(\conj{S}) = 0.05\cdot 0.1 \cdot 0.9 + 0.001\cdot 0.5 \cdot 0.1 = 0.00455$
     \\ $P(M_1\cap M_2|S)\cdot P(S) = P_1P_2 \cdot P(S) = 0.05 \cdot 0.1 \cdot 0.9 = 0.0045$
