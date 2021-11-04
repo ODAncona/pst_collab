@@ -1,6 +1,6 @@
 \begin{exo}
   \donnee{Pour éviter un incendie, une alarme a été installée dans la cuisine d’un restaurant australien.Supposons que la probabilité que l’alarme retentisse par erreur un jour donné sans qu’il y ait incendie est 0.01 et celle qu’elle retentisse en cas d’incendie vaut 0.95. De plus, on suppose que la probabilité qu’un incendie se déclare dans la cuisine un jour donné est 0.005}
-  \begin{subexo}{	Calculer la probabilité que l'alarme retentisse un jour donné.}
+  \begin{subexo}{Calculer la probabilité que l'alarme retentisse un jour donné.}
     \begin{flushleft}
     Commençons par modéliser la situation avec $I$ = "Incendie" et $A$ = "Alarme" nous pouvons alors distinguer les cas suivants:
     \end{flushleft}
@@ -39,11 +39,15 @@
       };
     \end{tikzpicture}
     \begin{flushleft}
-      La probabilité que l'alarme retentisse $P(A)$ est la probabilité qu'elle retentisse peu importe si il y a un incendie ou non. Cela peut se traduire par: $P(A) = P(A \cap I) + P(A \cap \conj{I})$ Calculons:
-      \\$P(A \cap I) = \dfrac{5}{1000} \cdot \dfrac{95}{100} = \dfrac{19}{4000}$
-      \\$P(A \cap \conj{I}) = \dfrac{995}{1000} \cdot \dfrac{1}{100} = \dfrac{199}{20000}$
-      \\ le total vaudra donc $\dfrac{19}{4000} + \dfrac{199}{20000} = 0,0147$
-    \end{flushleft}
+      La probabilité que l'alarme retentisse $P(A)$ est la probabilité qu'elle retentisse s'il y a un incendie ainsi que la probabilité qu'elle sonne une fausse alerte. Cela peut se traduire par: $P(A) = P(A \cap I) + P(A \cap \conj{I})$ Calculons
+  	\end{flushleft}
+    \begin{align*}
+    \\P(A \cap I) &= P(A | I) \cdot P(I) =\dfrac{5}{1000} \cdot \dfrac{95}{100} = \dfrac{19}{4000}
+    \\P(A \cap \conj{I}) &= P(A | \conj{I}) \cdot P(\conj{I}) = \dfrac{995}{1000} \cdot \dfrac{1}{100} = \dfrac{199}{20000}
+    \end{align*}
+	\begin{flushleft}
+	    le total vaudra donc $\dfrac{19}{4000} + \dfrac{199}{20000} = 0,0147$
+	\end{flushleft}
   \end{center}
   \end{subexo}
   \begin{subexo}{Déterminer la probabilité qu'un incendie se déclare dans la cuisine un jour donné en sachant que l'alarme l'a signalé.}
