@@ -1,9 +1,24 @@
 \begin{exo}
   \donnee{La société Gloup s’intéresse à la capacité de détection que possède le filtre bayesien anti-spam qu’elle vient d’installer. Dans la liste des mots et symboles permettant de détecter des messages publicitaires figurent les mots “viagra” et “miracle”. Par simplification, notons ces mots 1 et 2 et les probabilités:
-    \\\indent$p_i$ : probabilité qu’un mot choisi au hasard dans un message électronique est le mot i en sachant que le message est un spam
-    \\\indent$q_i$ : probabilité qu'un mot choisi au hasard dans un message électronique est le mot i en sachant que le message n’est pas un spam
-    \\valent respectivement $p_1$ = 0.05, $p_2$ = 0.1 et $q_1$ = 0.001, $q_2$ = 0.5. Supposons que dans chaque type de messages électroniques, les mots de la liste se trouvent indépendamment les uns des autres dans les messages. La proportion de messages spam reçus par la société Gloup vaut 0.9. En sachant que les mots “viagra” et “miracle” figurent tous les deux une fois dans le même message électronique, déterminer la probabilité qu’il s’agisse d’un spam.}
+    \\\indent$P_i$ : probabilité qu’un mot choisi au hasard dans un message électronique est le mot i en sachant que le message est un spam
+    \\\indent$Q_i$ : probabilité qu'un mot choisi au hasard dans un message électronique est le mot i en sachant que le message n’est pas un spam
+    \\valent respectivement $P_1$ = 0.05, $P_2$ = 0.1 et $Q_1$ = 0.001, $Q_2$ = 0.5. Supposons que dans chaque type de messages électroniques, les mots de la liste se trouvent indépendamment les uns des autres dans les messages. La proportion de messages spam reçus par la société Gloup vaut 0.9. En sachant que les mots “viagra” et “miracle” figurent tous les deux une fois dans le même message électronique, déterminer la probabilité qu’il s’agisse d’un spam.}
   \begin{flushleft}
-    $0,989$
+    Soit l'évènement aléatoire $S$ = "le message est un spam".
+    Avec la donnée nous avons:
+    \\Mot1 = "Viagra" avec $P_1 =P(M_1|S)= 0.05$ et $Q_1=P(M_1|\conj{S})=0.001$
+    \\Mot2 = "Miracle" avec $P_2=P(M_2|S)= 0.1$ et $Q_2=P(M_2|\conj{S})=0.5$
+    \\$P(S) = 0.9$ et $P(\conj{S}) = 0.1$
+    \\La probabilité cherchée est $P(S|M_1 \cap M_2)$ qui peut s'obtenir avec la formule de bayes totale:
+    \\ $P(S|M_1 \cap M_2) = \dfrac{P(M_1 \cap M_2|S)\cdot P(S)}{P(M_1 \cap M_2)}$
+    \\ avec $P(M_1 \cap M_2)$
+    \\ $=P(M_1 \cap M_2 | S) \cdot P(S) + P(M_1 \cap M_2 | \conj{S})\cdot P(\conj{S})$
+    \\ $=P(M_1|S)\cdot P(M_2|S) \cdot P(S) + P(M_1| \conj{S}) \cdot P(M_2 | \conj{S})  \cdot  P(\conj{S})$
+    \\ $= P_1P_2 \cdot P(S) + Q_1Q_2\cdot P(\conj{S})$
+    \\ Numériquement,
+    \\ $P(M_1 \cap M_2) = P_1P_2 \cdot P(S) + Q_1Q_2\cdot P(\conj{S}) = 0.05\cdot 0.1 \cdot 0.9 + 0.001\cdot 0.5 \cdot 0.1 = 0.00455$
+    \\ $P(M_1\cap M_2|S)\cdot P(S) = P_1P_2 \cdot P(S) = 0.05 \cdot 0.1 \cdot 0.9 = 0.0045$
+    \\ Donc
+    \\  $\dfrac{P(M_1|S)\cdot P(S)}{P(M_1)} = \dfrac{0.0045}{0.00455} = 0.989$
   \end{flushleft}
 \end{exo}
