@@ -1,0 +1,47 @@
+\begin{exo}
+  \donnee{Tous les jours de la semaine, un enseignant se rend à la même heure à l'école où il enseigne en suivant
+  systématiquement le même chemin. Sur son trajet se trouvent deux carrefours où la circulation est réglée
+  par un feu de signalisation ; rouge ou orange, pas d’autres signaux lumineux. La probabilité que le feu du
+  premier carrefour soit au orange lors du passage de l’enseignant vaut p et celle du second 2p. De plus, la
+  probabilité qu’au moins un des deux feux soit orange lors du passage de l’enseignant est 0.28. On suppose
+  que les feux de signalisation des deux carrefours fonctionnent indépendamment l’un de l’autre.
+  Considérons les  événements :}
+  $$A : \text{“Le feu du premier carrefour est orange” et } B : \text{“Le feu du second carrefour est orange”.}$$
+  \begin{subexo}{Traduire l'énoncé en langage probabiliste à l'aide des événements énoncés ci-dessus}
+
+    La probabilité que le feu du premier carrefour soit au orange lors du passage de l'enseignant vaut p.
+    $$P(A) = p$$
+    La probabilité que le feu du deuxième carrefour soit au orange lors du passage de l'enseignant vaut 2p.
+    $$P(B) = 2p$$
+    la
+    probabilité qu’au moins un des deux feux soit orange lors du passage de l’enseignant est 0.28
+    $$P(A\cup B) = 0.28$$
+
+  \end{subexo}
+  \begin{subexo}{Calculer la probabilité p}
+    Puisque les événements sont indépendants, nous avons :
+        \begin{align}
+          P(A \cap B) &= P(A) P(B)\\
+      &= p \cdot 2p\\
+      &= 2p^2
+        \end{align}
+      Nous savons aussi que
+        \begin{equation}
+          P(A \cup B) = P(A) + P(B) -P(A \cap B)
+        \end{equation}
+        L'équation (1) est vraie uniquement si les événements sont indépendants. Tandis que la (4) est toujours vrai !!
+        \begin{align}
+          P(A \cup B) &= P(A) + P(B) -P(A \cap B)\\
+           &= 0.28\\
+           &= p + 2p - 2p^2
+        \end{align}
+        Nous devons donc trouver les solutions de l'équation quadratique suivante:
+        $$2p^2 - 3p + 0.28 = 0$$
+          Nous avons : $\Delta = b^2 -4ac = 9 -4\cdot 2\cdot 0.28$\newline
+           et $\sqrt{\Delta} = 2.6$
+           $$\delta^+ = \frac{-(-3) + 2.6}{2\cdot2} = 1.4$$
+           $$\delta^- = \frac{-(-3) - 2.6}{2\cdot2} = 0.1$$
+          $p$ étant une probabilité, son domaine de définition est : $\mathbb{D} = [0;1]$ et $\delta^+ \notin \mathbb{D}$
+          Donc $p = 0.1$
+  \end{subexo}
+\end{exo}

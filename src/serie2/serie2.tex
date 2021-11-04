@@ -5,290 +5,37 @@
 	%
 	% Exercice 1
 	%
-	\begin{exo}
-		\donnee{À vue d’oeil, il fait beau sept fois sur dix à Yverdon–les–Bains le jour de la rentrée académique. Votre enseignant de probabilités et statistique dispose de deux sources de prévisions météorologiques indépendantes: le service météorologique suisse qui se trompe deux fois sur cent et une grenouille verte, qui se trompe une fois sur vingt.}
-		\begin{subexo}{À l’aide de l’énoncé, donner les probabilités}
-			\begin{multicols}{4}
-				\begin{enumerate}
-					\item	$P(F|E)$
-					\item	$P(F|\conj{E})$
-					\item	$P(G|E)$
-					\item	$P(G|\conj{E})$
-				\end{enumerate}
-			\end{multicols}
-			Pour commencer, modélisons la situation par un arbre avec $G=$ "la grenouille annonce beau" et $F=$ "la météo annonce le beau" et $E=$ "il fait beau".
-			\begin{center}
-				\begin{tikzpicture}[grow=right]
-					\node[] {}
-					child {
-						node[] {$\conj{E}$}        
-						child {
-							node[end, label=right: {$G$}] {}
-							edge from parent
-							node[below]  {$\frac{1}{20}$}
-						}
-						child {
-							node[end, label=right: {$F$}] {}
-							edge from parent
-							node[below]  {$\frac{1}{50}$}
-						}
-						edge from parent 
-						node[below]  {$\frac{3}{10}$}
-					}
-					child {
-						node[] {$E$}        
-						child {
-							node[end, label=right: {$G$}] {}
-							edge from parent
-							node[below]  {$\frac{19}{20}$}
-						}
-						child {
-							node[end, label=right: {$F$}] {}
-							edge from parent
-							node[below]  {$\frac{49}{50}$}
-						}
-						edge from parent         
-						node[below]  {$\frac{7}{10}$}
-					};
-				\end{tikzpicture}
-		\end{center}
-		De cet arbre découle:
-		\begin{enumerate}
-			\item	$P(F|E) = \dfrac{49}{50} = 0,98$
-			\item	$P(F|\conj{E}) = 1 - \dfrac{49}{50} = 0,02 $
-			\item	$P(G|E) = \dfrac{19}{20} = 0,95$
-			\item	$P(G|\conj{E}) = 1 - \dfrac{19}{20} = 0,05$
-		\end{enumerate}
-		\end{subexo}
-		\begin{subexo}{Calculez les probabilités}
-			\begin{multicols}{2}
-				\begin{enumerate}
-					\item $P(\conj{F}\cap G|E)$
-					\item $P(\conj{F}\cap G|\conj{E})$
-				\end{enumerate}
-			\end{multicols}
-		\begin{flushleft}
-		Nous pouvons distribuer les deux membres de l'inclusion grâce à leur indépendance conditionnelle, $P(\conj{F}\cap G|E) = \dfrac{P(\conj{F}\cap G \cap E) }{P(E)} = P(\conj{F}|E) \cdot P(G|E) $. Nous avons déjà $P(G|E) = \dfrac{19}{20} = 0,95$. Il nous manque $P(\conj{F}|E)$ que l'on peut retrouver à l'aide de $1 - P(F|E) = 0,02$ Ces branches peuvent être détaillées dans l'arbre ci-dessous:
-		\end{flushleft}
-		\begin{center}
-			\tikzstyle{level 1}=[level distance=3.5cm, sibling distance=3.5cm]
-			\begin{tikzpicture}[grow=right]
-				\node[] {$E$}
-				child {
-					node[end, label=right: {$\conj{F}$}] {}
-					edge from parent
-					node[below]  {$\frac{1}{50}$}
-				}
-				child {
-					node[end, label=right: {$F$}] {}
-					edge from parent
-					node[below]  {$\frac{49}{50}$}
-				}
-				child {
-					node[end, label=right: {$G$}] {}
-					edge from parent
-					node[above]  {$\frac{19}{20}$}
-				}
-				child {
-					node[end, label=right: {$\conj{G}$}] {}
-					edge from parent
-					node[above]  {$\frac{1}{20}$}
-				};
-			\end{tikzpicture}
-		\end{center}
-		\begin{flushleft}
-		Finalement, nous avons $P(\conj{F}\cap G|E) = P(\conj{F}|E) \cdot P(G|E) = \frac{1}{50} \cdot \frac{19}{20} = 0,019$\\
-		De manière similaire, $P(\conj{F}\cap G|\conj{E}) = P(\conj{F}|\conj{E}) \cdot P(G|\conj{E}) = \frac{49}{50} \cdot \frac{1}{20} = 0,049$
-		\end{flushleft}
-		\end{subexo}
-	\end{exo}
-	
+	\include{exo1}
+
 	%
 	% Exercice 2
 	%
-	\begin{exo}
-		\donnee{Pour éviter un incendie, une alarme a été installée dans la cuisine d’un restaurant australien.Supposons que la probabilité que l’alarme retentisse par erreur un jour donné sans qu’il y ait incendie est 0.01 et celle qu’elle retentisse en cas d’incendie vaut 0.95. De plus, on suppose que la probabilité qu’un incendie se déclare dans la cuisine un jour donné est 0.005}
-		\begin{subexo}{	Calculer la probabilité que l'alarme retentisse un jour donné.}
-			\begin{flushleft}
-			Commençons par modéliser la situation avec $I$ = "Incendie" et $A$ = "Alarme" nous pouvons alors distinguer les cas suivants:
-			\end{flushleft}
-			\begin{center}
-			\begin{tikzpicture}[grow=right]
-				\node[] {}
-				child {
-					node[] {$\conj{I}$}        
-					child {
-						node[end, label=right: {$\conj{A}$}] {}
-						edge from parent
-						node[below]  {$\frac{99}{100}$}
-					}
-					child {
-						node[end, label=right: {$A$}] {}
-						edge from parent
-						node[above]  {$\frac{1}{100}$}
-					}
-					edge from parent 
-					node[below]  {$\frac{995}{1000}$}
-				}
-				child {
-					node[] {$I$}        
-					child {
-						node[end, label=right: {$\conj{A}$}] {}
-						edge from parent
-						node[below]  {$\frac{5}{100}$}
-					}
-					child {
-						node[end, label=right: {$A$}] {}
-						edge from parent
-						node[above]  {$\frac{95}{100}$}
-					}
-					edge from parent         
-					node[above]  {$\frac{5}{1000}$}
-				};
-			\end{tikzpicture}
-			\begin{flushleft}
-				La probabilité que l'alarme retentisse $P(A)$ est la probabilité qu'elle retentisse peu importe si il y a un incendie ou non. Cela peut se traduire par: $P(A) = P(A \cap I) + P(A \cap \conj{I})$ Calculons:
-				\\$P(A \cap I) = \dfrac{5}{1000} \cdot \dfrac{95}{100} = \dfrac{19}{4000}$
-				\\$P(A \cap \conj{I}) = \dfrac{995}{1000} \cdot \dfrac{1}{100} = \dfrac{199}{20000}$
-				\\ le total vaudra donc $\dfrac{19}{4000} + \dfrac{199}{20000} = 0,0147$
-			\end{flushleft}
-		\end{center}
-		\end{subexo}
-		\begin{subexo}{Déterminer la probabilité qu'un incendie se déclare dans la cuisine un jour donné en sachant que l'alarme l'a signalé.}
-			\begin{flushleft}
-				La probabilité qu'il y ait un incendie sachant que l'alarme sonne $P(I|A)$ se calcule en utilisant la formule de Bayes car nous connaissons $P(A|I) = 0,95$. Soit $P(I|A) = \dfrac{P(A|I)\cdot P(I)}{P(A)}$ Numériquement $\dfrac{0,95 \cdot 0,005}{0,0147} = 0,323$
-			\end{flushleft}
-		\end{subexo}
-	\end{exo}
-	
+	\include{exo2}
+
 	%
 	% Exercice 3
 	%
-	\begin{exo}
-		\donnee{Un signal binaire valant 0 ou 1 est envoyé par câble électrique. La transmission est affectée par des perturbations dites “bruits” : le signal 0 est reçu en 1 avec probabilité 0.2 et le signal 1 est enregistré en 0 avec probabilité 0.1. Définissons les événements suivants:
-		\\ $E_0$ : "le signal émis vaut 0"
-		\\ $E_1$ : "le signal émis vaut 1"
-		\\ $R_0$ : "le signal reçu vaut 0"
-		\\ $R_1$ : "le signal reçu vaut 1" 
-		\\En supposant que le système de transmission émet le signal 0 avec probabilité 0.45, calculer les probabilités de transmission correctes }
-	\begin{flushleft}
-		Modélisons la situation à l'aide d'un arbre nous pouvons déjà remplir les branches $P(R_1 | E_0) = 0,2$ et $P(R_0 | E_1) = 0,1$ ainsi que $P(E_0) = 0,45$ et $P(E_1) = 0,55$. Ensuite, nous pouvons déduire de là $ P(R_0 | E_0) = 1 - 0,2 = 0,8 $ et $P(R_1 | E_1) = 1 - 0,1 = 0,9$.
-	\end{flushleft}
-	\begin{center}
-		\begin{tikzpicture}[grow=right]
-			\node[] {}
-			child {
-				node[] {$E_0$}        
-				child {
-					node[end, label=right: {$R_0$}] {}
-					edge from parent
-					node[below]  {$\frac{4}{5}$}
-				}
-				child {
-					node[end, label=right: {$R_1$}] {}
-					edge from parent
-					node[above]  {$\frac{1}{5}$}
-				}
-				edge from parent 
-				node[below]  {$\frac{9}{20}$}
-			}
-			child {
-				node[] {$E_1$}        
-				child {
-					node[end, label=right: {$R_0$}] {}
-					edge from parent
-					node[below]  {$\frac{1}{10}$}
-				}
-				child {
-					node[end, label=right: {$R_1$}] {}
-					edge from parent
-					node[above]  {$\frac{9}{10}$}
-				}
-				edge from parent         
-				node[above]  {$\frac{11}{20}$}
-			};
-		\end{tikzpicture}
-	\end{center}
-		\begin{subexo}{$P(E_0 | R_0)$}
-			\begin{flushleft}
-				Afin de résoudre cette équation, il faut utiliser la formule de Bayes totale:
-				\\$P(E_0|R_0) = \dfrac{P(R_0|E_0)\cdot P(E_0)}{P(R_0)}$ avec $P(R_0) = P(R_0 | E_0) \cdot P(E_0) + P(R_0 | E_1)\cdot P(E_1)$
-				\\Numériquement:
-				\\$P(R_0) = \dfrac{4}{5}\cdot\dfrac{9}{20} +\dfrac{1}{10}\cdot\dfrac{11}{20} = 0,415$
-				\\$P(R_0|E_0)\cdot P(E_0) =  \dfrac{4}{5}\cdot \dfrac{9}{20} = \dfrac{9}{25} = 0,36$
-				\\ Finalement, $P(E_0|R_0) = \dfrac{0,36}{0,415} = 0,867$
-			\end{flushleft}
-		\end{subexo}
-		\begin{subexo}{$P(E_1 | R_1)$}
-			\begin{flushleft}
-				De manière similaire:
-				\\$P(E_1|R_1) = \dfrac{P(R_1|E_1)\cdot P(E_1)}{P(R_1)}$ avec $P(R_1) = P(R_1 | E_0) \cdot P(E_0) + P(R_1 | E_1)\cdot P(E_1)$
-				\\Numériquement:
-				\\$P(R_1) = \dfrac{1}{5}\cdot\dfrac{9}{20} +\dfrac{9}{10}\cdot\dfrac{11}{20} = 0,415$
-				\\$P(R_1|E_1)\cdot P(E_1) =  \dfrac{9}{10}\cdot \dfrac{11}{20} = 0,495$
-				\\ Finalement, $P(E_0|R_0) = \dfrac{0,495}{0,585} = 0,846$
-			\end{flushleft}
-		\end{subexo}
-	\end{exo}
+	\include{exo3}
 	%
 	% Exercice 4
 	%
-	\begin{exo}
-		\donnee{On jette de suite deux dés équilibrés. Considérons les événements :
-			\\• A : “la somme des faces vaut 6”;
-			\\• B : “le premier dé donne 4”;
-			\\• C : “la somme des faces vaut 7”.
-			\\Les événements A et B sont-ils indépendants ? Qu’en est-il des événements B et C ? Donnez une interprétation intuitive des résultats.}
-		\begin{subexo}{Les événements A et B sont-ils indépendants ? Qu’en est-il des événements B et C ? Donnez une interprétation intuitive des résultats.}
-			\begin{flushleft}
-				L'univers $\Omega = \{(1,1),...,(6,6)\}$ Pour répondre savoir si un événement $A$ et $B$ sont indépendant, on peut utiliser la définition: $A$, $B$ indépendant $\Leftrightarrow P(A | B) = \dfrac{P(A \cap B)}{P(B)}=P(A)$ Commençons par calculer les probabilités:
-				\\$P(A) = \dfrac{5}{36}$ car sur 36 jets possible il y a $\{(1,5),(2,4),(3,3),(4,2),(5,1)\}$
-				\\$P(B) = \dfrac{1}{6}$
-				\\$P(C) = \dfrac{1}{6}$ car sur 36 jets possibles il y a $\{(1,6),(2,5),(3,4),(4,3),(2,5),(6,1)\}$
-				\\$P(A \cap B) = \dfrac{1}{36}$ c'est à dire le cas $\{(4,2)\}$
-				\\Vérifions l'indépendance de A et B: $P(A | B) = \dfrac{\frac{1}{36}}{\frac{1}{6}}=\dfrac{1}{6} \neq P(A)$ Donc A et B sont dépendants.
-				\\ Procédons à la suite:
-				\\$P(B\cap C) = \dfrac{1}{36}$ c'est à dire le cas $\{(4,3)\}$
-				\\Vérifions l'indépendance de B et C: $P(B | C) = \dfrac{\frac{1}{36}}{\frac{1}{6}}=\dfrac{1}{6} = P(C)$ Donc B et C sont indépendants
-			\end{flushleft}
-		\end{subexo}
-	\end{exo}
+	\include{exo4}
+
 	%
 	% Exercice 5
 	%
-	\begin{exo}
-		\donnee{Un système électronique est formé des composants A, B, C et D placés selon le dispositif de la Figure 1. On suppose que les composants fonctionnent indépendamment les uns des autres et leurs probabilités de fonctionnement sont toutes égales à 0.8. Le système est opérationnel s’il existe un chemin entre les points I et O ne comprenant que des composants qui fonctionnent. Calculer la probabilité que le système soit défaillant.\\\includegraphics[width=10cm]{ex5.png}}
-		\begin{flushleft}
-			Prenons $A$ = "A fonctionne" et $\conj{A}$ ="A ne fonctionne pas". Pour que le système soit défaillant, il faut que la partie du bas et la partie du haut soit disfonctionnelle simultanément. Pour que la partie du haut soit disfonctionnelle il faut que soit A soit (B ou C) ne fonctionne pas ce qui se traduit par $\conj{A} \cup (\conj{B}\cap \conj{C})$. Donc la probabilité pour que le système soit défaillant: $P\Big(\conj{D}\cap \big( \conj{A} \cup (\conj{B}\cap \conj{C})\big)\Big) $ 
-			\\Développement:
-			\\$= P(\conj{A} \cup (\conj{B} \cap \conj{C}))$ 
-			\\$= P(\conj{A}) + P(\conj{B} \cap \conj{C}) - P(\conj{A} \cap (\conj{B} \cap \conj{C})$ 
-			\\$= P(\conj{A}) + P(\conj{B})P(\conj{C}) -  P(\conj{A})\cdot P(\conj{B})P(\conj{C})$
-			\\$= P(\conj{A}) + P(\conj{B})P(\conj{C}) \cdot \big(1-P(\conj{A})\big)$
-			\\$= 0,2 + 0,04 \cdot 0,8 = 0,232$
-			\\ Alors
-			\\$P\Big(\conj{D}\cap \big( \conj{A} \cup (\conj{B}\cap \conj{C})\big)\Big) $
-			\\$= P(\conj{D})\cdot P(\conj{A} \cup (\conj{B} \cap \conj{C})) = 0,2 \cdot 0,232  = 0,0464$ 
-		\end{flushleft}
-	\end{exo}
+	\include{exo5}
+
 	%
 	% Exercice 6
 	%
-	\begin{exo}
-		\donnee{La société Gloup s’intéresse à la capacité de détection que possède le filtre bayesien anti-spam qu’elle vient d’installer. Dans la liste des mots et symboles permettant de détecter des messages publicitaires figurent les mots “viagra” et “miracle”. Par simplification, notons ces mots 1 et 2 et les probabilités:
-			\\\indent$p_i$ : probabilité qu’un mot choisi au hasard dans un message électronique est le mot i en sachant que le message est un spam
-			\\\indent$q_i$ : probabilité qu'un mot choisi au hasard dans un message électronique est le mot i en sachant que le message n’est pas un spam
-			\\valent respectivement $p_1$ = 0.05, $p_2$ = 0.1 et $q_1$ = 0.001, $q_2$ = 0.5. Supposons que dans chaque type de messages électroniques, les mots de la liste se trouvent indépendamment les uns des autres dans les messages. La proportion de messages spam reçus par la société Gloup vaut 0.9. En sachant que les mots “viagra” et “miracle” figurent tous les deux une fois dans le même message électronique, déterminer la probabilité qu’il s’agisse d’un spam.}
-		\begin{flushleft}
-			$0,989$
-		\end{flushleft}
-	\end{exo}
+	\include{exo6}
+
 	%
 	% Exercice 7
 	%
-	\begin{exo}
-		\donnee{En sachant que pour le jour de la rentrée académique, la météo avait annoncé de la pluie le matin alors que le comportement de la grenouille avait laissé présager du soleil, calculer la probabilité qu'il allait faire beau à Yverdon le matin de la rentrée.}
-	\end{exo}
+	\include{exo7}
+	
 	%
 	% Footer
 	%
