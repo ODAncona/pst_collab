@@ -1,7 +1,7 @@
 \begin{exo}
   \donnee{Un système électronique est formé des composants A, B, C et D placés selon le dispositif de la Figure 1. On suppose que les composants fonctionnent indépendamment les uns des autres et leurs probabilités de fonctionnement sont toutes égales à 0.8. Le système est opérationnel s’il existe un chemin entre les points I et O ne comprenant que des composants qui fonctionnent. Calculer la probabilité que le système soit défaillant.\\\includegraphics[width=10cm]{ex5.png}}
   \begin{flushleft}
-    Prenons $A$ = "A fonctionne" et $\conj{A}$ ="A ne fonctionne pas". Pour que le système soit défaillant, il faut que la partie du bas et la partie du haut soit disfonctionnelle simultanément. Pour que la partie du haut soit disfonctionnelle il faut que soit A soit (B ou C) ne fonctionne pas ce qui se traduit par $\conj{A} \cup (\conj{B}\cap \conj{C})$. Donc la probabilité pour que le système soit défaillant: $P\Big(\conj{D}\cap \big( \conj{A} \cup (\conj{B}\cap \conj{C})\big)\Big) $
+    Prenons $A$ = "A fonctionne" et $\conj{A}$ ="A ne fonctionne pas". Pour que le système soit défaillant, il faut que la partie du bas et la partie du haut soit disfonctionnelle simultanément. Pour que la partie du haut soit disfonctionnelle il faut que soit A soit (B et C) ne fonctionnent pas ce qui se traduit par $\conj{A} \cup (\conj{B}\cap \conj{C})$. Donc la probabilité pour que le système soit défaillant: $P\Big(\conj{D}\cap \big( \conj{A} \cup (\conj{B}\cap \conj{C})\big)\Big) $
     \\Développement:
     \\$= P(\conj{A} \cup (\conj{B} \cap \conj{C}))$
     \\$= P(\conj{A}) + P(\conj{B} \cap \conj{C}) - P(\conj{A} \cap (\conj{B} \cap \conj{C})$
