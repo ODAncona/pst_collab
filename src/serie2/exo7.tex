@@ -1,3 +1,12 @@
 \begin{exo}
   \donnee{En sachant que pour le jour de la rentrée académique, la météo avait annoncé de la pluie le matin alors que le comportement de la grenouille avait laissé présager du soleil, calculer la probabilité qu'il allait faire beau à Yverdon le matin de la rentrée.}
+ \begin{flushleft}
+ 	L'exercice demande de prédire $P(E | \conj{F} \cap G)$. C'est à dire qu'il fasse beau $E$ sachant que la météo prédit la pluie $\conj{F}$ et que la grenouille prédise le beau temps $G$.
+  \end{flushleft}
+  \begin{align*}
+  	P(E | \conj{F} \cap G) &= \dfrac{P(\conj{F} \cap G |E)\cdot P(E)}{P(\conj{F} \cap G)}
+  	\\&= \dfrac{P(\conj{F}|E)\cdot P(G|E)\cdot P(E)}{P(\conj{F} \cap G |E)\cdot P(E)+ P(\conj{F} \cap G |\conj{E})\cdot P(\conj{E})}
+  	\\ &= \dfrac{0.7\cdot 0.02 \cdot 0.95}{0.7 \cdot 0.0019 + 0.3 \cdot 0.049}
+  	\\ &=0.475
+  \end{align*}
 \end{exo}
