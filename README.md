@@ -40,7 +40,7 @@ Le but de ce repo est de remettre au propre les séries d'exercices du cours PST
   sudo apt-get install texstudio
   ```
 ### Astuces
-  Si vous souhaitez déplacer tous les fichiers pdf dans le dossier dst en une seule commande vous pouvez utiliser depuis le dossier src `find -name *.pdf -exec mv -t ../dst {} + `
+  Si vous souhaitez déplacer tous les fichiers pdf dans le dossier dst en une seule commande vous pouvez utiliser depuis le dossier src `find -name *.pdf -exec mv -t ../corriges {} + `
 
 
 Merci de votre collaboration ! N'hésitez pas à ouvrir un issue s'il y a une erreur quelquepart ou proposer votre méthode de résolution si vous avez utilisé une autre manière.
