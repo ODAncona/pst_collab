@@ -1,3 +1,37 @@
 \begin{exo}
   \donnee{Des signaux binaires (0 ou 1) sont transmis d’un point A à un point B par un canal de communication. Cependant, une erreur de transmission peut toujours résulter de perturbations aléatoires agissant sur le canal. Supposons qu’un signal émis en A soit correctement enregistré en B avec probabilité 0.8 et ce indépendamment d’un signal à l’autre. Pour essayer d’améliorer la qualité de transmission, on se propose d’émettre chaque signal trois fois de suite, i.e. 000 au lieu de 0 et 111 au lieu de 1.}
+  \begin{subexo}{Déterminer les réceptions possibles par émission par block de trois signaux identiques}
+    pour le signal 1, on envoie 111. ce dernier peut être faux sur n'importe quel bit donc on a
+    comme réception possible : 000, 001, 010, 011, 100, 101, 110, 111
+  \end{subexo}
+  \begin{subexo}{Supposons que le signal 0 a été émis en A par le block 000 et définisson par $X$ la variable aléatoire qui indique le nombre d'erreurs possibles à la récéption du block. Déterminer les valeurs que peut prendre la variable aléatoire $X$}
+    On a envoyé 000, nous voulons savoir combien il peut y avoir d'erreur sur ce message.
+    Chaque bit peut etre faux (un 1 à la place du 0).
+    Nous avons donc : les signaux 100, 010 et 001 qui comptabilise une erreur. Nous avons les signaux 110, 101 et 011 qui comptabilisent 2 erreurs, 111 qui comptabilise 3 erreurs et 000 qui n'a pas d'erreur
+
+    La valeur aléatoire peut donc prendre les valeurs 0,1,2 et 3
+  \end{subexo}
+  \begin{subexo}{Calculer la loi de probabilité de X}
+    Pour trouver la loi de proba, nous devons trouver la probabilité que $X$ prenne la valeur $x$.
+    $X$ suit une lois binomiale, en effet elle compte le nombre de succès (chapitre 6 slide 6) parmis $n$ épreuves. 
+    La lois de proba est $P(X=k) = \binom{n}{k} \cdot p^x(1-p)^{n-x} $
+    Nous avons donc 3 épreuves (une pour chaque bit), avec une proba de réussir de 0.8 pour chacune
+    \begin{center}
+      \begin{tabular}{p{2cm}|p{3cm}p{3.5cm}p{3.5cm}p{3.5cm}}        
+        $X$ = $x$  & 0 & 1 & 2 & 3 \\ \midrule
+        $P(X=x)$ & $\binom{3}{0}(0.8)^3$=0.512 & $\binom{3}{1} 0.8^2  0.2^1$=0.384 & $\binom{3}{2} 0.8^1  0.2^2$ = 0.096& $\binom{3}{3} 0.8^0  0.2^3$ = 0.008 
+      \end{tabular}
+    \end{center}
+    Intuitivement, pour le cas $X=1$ nous devons avoir 1 erreur et deux correctes. Nous voulons donc l'intersection de ces trois évènements, comme ils sont indépendants, nous multiplions leur probabilités, cependant il faut prendre en compte qu'il y a trois évènements qui donne 1 erreur et 2 correctes puisque l'erreur peut être sur n'importe quel bit. Nous devons donc mutliplier cette proba par trois (le binom $\binom{3}{1}$ représente exactement la multiplicité d'avoir 1 faux et deux justes) 
+  \end{subexo}
+  \begin{subexo}{Le décodage à la réception se réalise suivant le principe majoritaire. Par exemple, 010 est décodé
+    en 0. Calculer la probabilité d’erreur pour le signal 0  émis par le bloc 000. Est-elle inférieure à 0.2,
+    probabilité sans répétition du signal ? La qualité de transmission est-elle amélioré}
+    Nous devons avoir au moins 2 erreur sur notre transmission pour que l'interpretation sois fausse donc  
+    $$P(X\ge 2) = P(X=2) + P(X=3)  = 0.096 + 0.008 = 0.104$$
+    puisque X est discrète, en choississant $x$ = 2 et $x$ = 3 nous avons toutes les valeurs que X peut prendre 
+    donc nous respectons $P(X\ge 2)$
+
+    Notre probabilité de 0.104 est plus petite que la probabilité sans répétition (0.2 puisque un signal a une proba de 0.8 d'arriver juste) Le signal est donc amélioré.
+  \end{subexo}
 \end{exo}
