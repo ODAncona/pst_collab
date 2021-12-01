@@ -1,7 +1,8 @@
 # pst_collab
 Le but de ce repo est de remettre au propre les séries d'exercices du cours PST-2021 de manière collaborative.
 
-# La dernière version des corrections est AUTOMATIQUEMENT construite sur github, pour être sur d'avoir la dernière cliquez sur le menu release à droite et downloadez la dernière version ;) 
+# Corrections
+La dernière version des corrections est AUTOMATIQUEMENT construite sur github, pour être sur d'avoir la dernière cliquez sur le menu release à droite et downloadez la dernière version ;) 
 
 
 ## Structure du repo
