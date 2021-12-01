@@ -8,7 +8,13 @@ jobs:
     - name: pdflatex
       run: chmod +x ./build.sh && ./build.sh
       shell: bash
-    - uses: actions/upload-artifact@v2
+    - name: create-artifact
+      uses: actions/upload-artifact@v2
       with:
         name: corrections
         path: corriges
+    - name: create-pacakge
+      uses: softprops/action-gh-release@v1
+      with:
+        files: corrections
+        
