@@ -3,7 +3,7 @@ jobs:
   Build:
     runs-on: ubuntu-20.04
     steps:
-    - run: apt install -y texlive-latex-extra texlive-pstricks texlive-lang-french
+    - run: sudo apt install -y texlive-latex-extra texlive-pstricks texlive-lang-french
     - uses: actions/checkout@v2
     - name: pdflatex
       run: ./build.sh
