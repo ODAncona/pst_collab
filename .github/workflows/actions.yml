@@ -13,8 +13,8 @@ jobs:
       with:
         name: corrections
         path: corriges
-    - name: create-pacakge
-      uses: softprops/action-gh-release@v1
+    - name: create-release
+      uses: ncipollo/release-action@v1
       with:
-        files: corrections
-        
+        artifacts: "corriges/*.pdf"
+        name: "corrections"
