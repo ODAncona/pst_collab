@@ -1,5 +1,64 @@
 \begin{exo}
   \donnee{Une boîte contient deux billes noires et trois billes blanches. On tire une bille à la fois, sans remise,
-    jusqu’à ce que la première bille noire apparaisse. Dès que la bille noire est tirée, aucune autre bille est
-    extraite de la boîte. Désignons par X le nombre de tirages nécessaires. En utilisant un arbre binaire,}
+    jusqu’à ce que la première bille noire apparaisse. Dès que la bille noire est tirée, aucune autre bille est extraite de la boîte. Désignons par $X$ le nombre de tirage nécessaires. En utilisant un arbre binaire,}
+    \begin{subexo}{Déterminer  l'ensemble fondamental $\Omega$ de l'expérience aléatoire à l'aide des événements :}
+        \begin{itemize}
+          \item $N$ Une bille noire est tirée
+          \item $B$ Une bille blanche est tirée
+        \end{itemize}
+        \begin{center}
+        \begin{tikzpicture}[grow=right]
+          \node[]{Arbre des choix}
+          child{
+            node[]{$N$}
+            edge from parent
+            node[below]{$\frac{2}{5}$}
+          }
+          child{
+            node[]{$B$}
+            child[]{
+              node[]{$N$}
+              edge from parent
+              node[below]{$\frac{2}{4}$}
+            }
+            child[]{
+              node[]{$B$}
+              child[]{
+                node[]{$N$}
+                edge from parent
+                node[below]{$\frac{2}{3}$}
+              }              
+              child[]{
+                node[]{$B$}
+                child[]{
+                  node[]{$N$}
+                  edge from parent
+                  node[above]{$\frac{1}{1}$}
+                }
+                edge from parent
+                node[above]{$\frac{1}{3}$}
+              }
+              edge from parent
+              node[above]{$\frac{2}{4}$}
+            }
+          edge from parent
+          node[above]{$\frac{3}{5}$}
+          };
+        \end{tikzpicture}
+        \end{center}
+        Nous arrivons à l'arbre si dessus. En effet avec cet arbre, nous avons toutes les possibilités que peut prendre $X$
+        la probabilité est notée sur chaque branche.
+        Ainsi lors du premier tirage, nous avons intuitivement $\frac{3}{5}$ "chances" de tirer une boule blanche, et nous avons une probabilité de tiré une boule noir égal à $\frac{2}{5}$ 
+    \end{subexo}
+    \begin{subexo}{Calculer la loi de probabilité de $X$}
+      \begin{center}
+        
+        \begin{tabular}{p{3cm}|p{2cm}p{2cm}p{2cm}p{2cm}p{2cm}}
+          \midrule
+          X = xi  & 1   & 2         & 3             & 4                   \\ \toprule
+          P(X=xi) & $\frac{2}{5}$    & $\frac{3}{5}\cdot \frac{1}{2}$ & $\frac{3}{5} \cdot \frac{1}{2}  \cdot\frac{2}{3} $& $\frac{3}{5} \cdot \frac{1}{2}  \cdot \frac{1}{3}\cdot \frac{1}{1}$ \\ \midrule
+          \end{tabular}
+      \end{center}
+      On suit simplement la solution à travers l'arbre en multipliant les probabilités
+    \end{subexo}
 \end{exo}

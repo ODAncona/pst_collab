@@ -1,0 +1,21 @@
+name: build-latex
+on: [push]
+jobs:
+  install-latex:
+  runs-on: ubuntu-20.04
+  steps:
+    - run: apt install -y texlive-latex-extra texlive-pstricks texlive-lang-french
+  build-pdf:
+  runs-on: ubuntu-20.04
+  steps:
+    - uses: actions/checkout@v2
+    - name: pdflatex
+      run: ./build.sh
+      shell: bash
+  store-pdf:
+  runs-on: ubuntu-20.04
+    steps:
+    - uses: actions/upload-artifact@v2
+      with:
+      name: corrections
+      path: corriges
