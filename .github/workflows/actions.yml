@@ -6,7 +6,7 @@ jobs:
     - run: sudo apt install -y texlive-latex-extra texlive-pstricks texlive-lang-french
     - uses: actions/checkout@v2
     - name: pdflatex
-      run: ./build.sh
+      run: chmod +x ./build.sh && ./build.sh
       shell: bash
     - uses: actions/upload-artifact@v2
       with:
