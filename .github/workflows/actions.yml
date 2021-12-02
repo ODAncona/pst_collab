@@ -1,4 +1,4 @@
-on: [push, pull_request]
+on: push
 jobs:
   Build:
     runs-on: ubuntu-20.04
@@ -8,6 +8,10 @@ jobs:
     - name: pdflatex
       run: chmod +x ./build.sh && ./build.sh
       shell: bash
+  Package:
+    runs-on: ubuntu-20.04
+    needs: Build
+    steps:
     - name: create-artifact
       uses: actions/upload-artifact@v2
       with:
