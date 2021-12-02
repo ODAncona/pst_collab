@@ -1,4 +1,4 @@
-on: [push]
+on: [push, pull_request]
 jobs:
   Build:
     runs-on: ubuntu-20.04
@@ -16,6 +16,6 @@ jobs:
     - name: create-release
       uses: ncipollo/release-action@v1
       with:
-        tag: ${GITHUB_SHA}
+        tag: ${{GITHUB_SHA}}
         artifacts: "corriges/*.pdf"
         name: "corrections"
