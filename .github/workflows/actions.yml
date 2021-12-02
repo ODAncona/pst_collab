@@ -16,6 +16,6 @@ jobs:
     - name: create-release
       uses: ncipollo/release-action@v1
       with:
-        tag: ${{ GITHUB_SHA }}
+        tag: ${{ github.sha }}
         artifacts: "corriges/*.pdf"
         name: "corrections"
