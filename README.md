@@ -1,19 +1,27 @@
 # pst_collab
 Le but de ce repo est de remettre au propre les séries d'exercices du cours PST-2021 de manière collaborative.
 
+# Corrections
+La dernière version des corrections est AUTOMATIQUEMENT construite sur github, pour être sur d'avoir la dernière cliquez sur le menu release à droite et downloadez la dernière version ;) 
+
 
 ## Structure du repo
 
 * [src](./src) => dossier avec les fichier LaTex triés par dossier
 * [corrigés](./corriges) => dossier avec tous les pdf
-* [photos](./photos) => dossier avec tous les développements (Une image par exercice s.v.p.)
+* [photos](./photos) => dossier avec tous les développements 
 * [énoncés](./enonces) => dossier contenant les données des séries
 
 ## Comment contribuer
+## Annoncer votre travail
+1. Ouvrer une issue sur laquel vous annoncez quel(s) exercice(s) vous allez corriger
 ### Rédaction
-1. Fork du repository en local
-2. Modification des documents
-3. Pull Request
+1. Fork du repository
+2. clone du fork
+4. Modification des documents DANS UNE NOUVELLE BRANCHE
+5. push sur votre fork
+6. vous avez maintenant l'option de faire une pull request
+7. En commentaire, mettez #closes le numero de votre issue
 
 ### Résolution
 1. Résoudre un exercice 
@@ -26,21 +34,15 @@ Le but de ce repo est de remettre au propre les séries d'exercices du cours PST
 2. Installer TexStudio
 ### Mac
 ### Linux
-1. Installer une distribution Tex tel que tex-live ou miketex 
+
+1. Installer les packages nécessaires 
   ```
-  sudo apt install texlive-latex-extra
+  sudo apt install -y texlive-latex-extra texlive-pstricks texlive-lang-french 
   ```
-2. Installer les packages nécessaires 
+2. Installer TexStudio (optionel), vous pouvez aussi ouvrir les documents .tex avec visualStudio et installer les plugins recommandés
   ```
-  sudo apt-get install -y texlive-pstricks
-  sudo apt-get install texlive-lang-french 
+  sudo apt install texstudio
   ```
-3. Installer TexStudio
-  ```
-  sudo apt-get install texstudio
-  ```
-### Astuces
-  Si vous souhaitez déplacer tous les fichiers pdf dans le dossier dst en une seule commande vous pouvez utiliser depuis le dossier src `find -name *.pdf -exec mv -t ../corriges {} + `
 
 
 Merci de votre collaboration ! N'hésitez pas à ouvrir un issue s'il y a une erreur quelquepart ou proposer votre méthode de résolution si vous avez utilisé une autre manière.
