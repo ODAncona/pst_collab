@@ -1,6 +1,90 @@
 \begin{exo}
-  \donnee{Imaginons qu’on souhaite transmettre les réalisations $x_1, x_2, . . . , x_n$ d’une variable aléatoire discrète X d’un point d’observation A à un point de réception B à l’aide d’un canal de communication ne pouvant transférer que des 0 ou des 1. Ainsi, les valeurs prises par X devront être codées en chaînes formées uniquement de 0 et de 1 avant d’être transmises. Pour éviter toute ambiguïté, on exige qu’un code ne puisse pas être une extension d’un autre.
-  \\Comme exemple, supposons que les réalisations de X sont $x_1, x_2, x_3, x_4$. Comme code possible, on peut envisager
-  \\$$x_1 \leftrightarrow 00, x_2 \leftrightarrow 01, x_3 \leftrightarrow 10, x_4 \leftrightarrow 11$$Ainsi, si X prend la valeur $x_1$, le message envoyé en B sera 00, il vaudra 01 si X = $x_2$ et ainsi de suite. Un autre code possible est
-  \\$$x_1 \leftrightarrow 0, x_2 \leftrightarrow 10, x_3 \leftrightarrow 110, x_4 \leftrightarrow 111$$Un objectif du codage consiste tout naturellement à minimiser le nombre espéré de bits nécessaires pour transmettre l’information. Ainsi, un code est dit plus efficace qu’un autre si son nombre espéré de bits est plus petit que celui nécessaire à l’autre code.}
+  \donnee{Imaginons qu’on souhaite transmettre les réalisations
+    $x_1, x_2, . . . , x_n$ d’une variable aléatoire discrète X
+    d’un point d’observation A à un point de réception B à l’aide d’un canal de communication
+    ne pouvant transférer que des 0 ou des 1.
+    Ainsi, les valeurs prises par X devront être codées en chaînes formées uniquement
+    de 0 et de 1 avant d’être transmises. Pour éviter toute ambiguïté, on exige
+    qu’un code ne puisse pas être une extension d’un autre.
+    Comme exemple, supposons que les réalisations de X sont $x_1, x_2, x_3, x_4$.
+    Comme code possible, on peut envisager}
+  \setcounter{equation}{0}
+  \begin{equation}
+    x_1 \leftrightarrow 00,
+    x_2 \leftrightarrow 01,
+    x_3 \leftrightarrow 10,
+    x_4 \leftrightarrow 11
+  \end{equation}
+  Ainsi, si X prend la valeur $x_1$, le message envoyé en B sera 00,
+  il vaudra 01 si X = $x_2$ et ainsi de suite. Un autre code possible est
+  \begin{equation}
+    x_1 \leftrightarrow 0,
+    x_2 \leftrightarrow 10,
+    x_3 \leftrightarrow 110,
+    x_4 \leftrightarrow 111
+  \end{equation}
+  En revanche le codage
+  \begin{equation}
+    x_1 \leftrightarrow 0,
+    x_2 \leftrightarrow 1,
+    x_3 \leftrightarrow 00,
+    x_4 \leftrightarrow 01
+  \end{equation}
+  n'est pas admis étant donné que $x_3$ et $x_4$ sont des extensions de $x_1$
+  Un objectif du codage consiste tout naturellement à minimiser le nombre
+  espéré de bits nécessaires pour transmettre l’information.
+  Ainsi, un code est dit plus efficace qu’un autre si son nombre espéré
+  de bits est plus petit que celui nécessaire à l’autre code.
+  \begin{subexo}{Supposons qe la lois de probabilité est}
+    \begin{center}
+      \begin{tabular}{@{}l|llll@{}}
+        $X = x$  & $x_1$         & $x_2$         & $x_3$         & $x_4$         \\ \midrule
+        $P(X=x)$ & $\frac{1}{2}$ & $\frac{1}{4}$ & $\frac{1}{8}$ & $\frac{1}{8}$
+      \end{tabular}
+    \end{center}
+    \textit{ et considérons les codes données ci-dessus par (1) et (2)
+    Pour cette distribution de $X$ quel est le code le plus efficace ?}
+    \[
+      \mathbb{E}_{nbBits}(\text{code1}) = 2 * \frac{1}{2} + 2 * \frac{1}{4} +
+      2*\frac{1}{8} + 2*\frac{1}{8} = 2
+    \]
+    Donc nous pouvons nous attendre à avoir besoins de 2 bits pour envoyé le $x_i$
+     en utilisant le code  (1) ce qui fait sens, puisque nous codons toutes les réalisations
+     de $X$ avec deux bits
+    \[
+      \mathbb{E}_{nbBits}(\text{code2}) = 1 * \frac{1}{2} + 2 * \frac{1}{4} +
+      3*\frac{1}{8} + 3*\frac{1}{8} = 1.75
+    \]
+    Si nous utilisons le code 2 cependant, nous avons en moyenne besoins de 1.75 bits pour 
+    coder les réalisations $x_i$ de $X$
+  \end{subexo}
+  \begin{subexo}{Considérons en toute généralité une variable aléatoire discrète $X$
+     prenant ses valeurs dans l'ensemble $\{x_1,x_2,... , x_n\}$ 
+     \textit{avec probabilité correspondantes $p_1, p_2... p_n$. La grandeur 
+     \[
+      H(X) = - \sum_{i=i}^{n}p_i \cdot \log_2(p_i) 
+     \]}
+      est appelée, en théorie de l'information, \textit{entropie} 
+      de la variable aléatoire X. Par convention, si l'une des probabilités $p_i$ est nul
+      on pose $0 \cdot log_x(0)$ = 0. L'entropie représente en quelque sorte la quantité d'incertitude relative à X.
+       Autrement dit, on considère H(X) comme l'information lié à l'overvation de X.
+       Caluler l'entropie de X selon la distribution donné en a)}
+
+       Appliquons la définition : 
+       
+       \setcounter{equation}{0}
+       \begin{align}
+         H(X) =& -\sum_{i=i}^{n}p_i \cdot \log_2(p_i) \\
+          =&  \frac{1}{2}\cdot log_2(\frac{1}{2}) + \frac{1}{4}\cdot log_2(\frac{1}{4})
+          + \frac{1}{8}\cdot log_2(\frac{1}{8})
+          + \frac{1}{8}\cdot log_2(\frac{1}{2})\\
+          =& 1.75
+        \end{align}
+  \end{subexo}
+  \begin{subexo}{Selon le théorème du codage sans bruit, tout codage nécessite 
+    un nombre espéré de bits au minimum égal à l'entropie de X}
+    
+    Le code (2) est donc un code qui permet de transmettre l'information de la manière la plus optimale possible
+
+  \end{subexo}
 \end{exo}
