@@ -1,14 +1,49 @@
 \begin{exo}
-	\donnee{Considérons une variable aléatoire $\X$ dont la fonction de densité est $f_x(u)=
+	\donnee{Considérons une variable aléatoire $X$ dont la fonction de densité est $f_x(u)=
 		\begin{cases}
-			e^{-u} & \text{si $ u \ge 1$ } \\
+			e^{-u} & \text{si $ u > 0$ } \\
 			x & \text{$0$ sinon.} \\
 		\end{cases}$
 		Calculez les probabilités:}
-	\begin{subexo}{Déterminer la fonction de répartition de $\X$ et tracer son graphe}
+	\begin{subexo}{Déterminer la fonction de répartition de $X$ et tracer son graphe}
+		\begin{center}
+			Pour commencer, il faut se rappeler de la définition de la fonction de répartition:  
+		\end{center}
+		\begin{align*}
+			P(X \leq x) = F_x(x) &= \int_{-\infty}^{x}{f_x(u)}du \\
+			&= \int_{0}^{x}{e^{-u}}du \\
+			&= -e^{-u}\bigg\vert_{0}^{x} \\
+			&= -e^{-x} + e^{0} \\
+			&= 1 - e^{-x} \\
+		\end{align*}
+		\begin{center}
+			Finalement la fonction de répartition $F_x(x) = \begin{cases}
+				1 - e^{-x} & \text{si $ x > 0$} \\
+				0 & \text{si $ x \leq 0$ } \\
+			\end{cases}$
+		\end{center}
 	\end{subexo}
-	\begin{subexo}{Calculer les probabilités $P(\X < 4)$ et $P(1 < \X < 2.5)$}
+	\begin{subexo}{Calculer les probabilités $P(X < 4)$ et $P(1 < X < 2.5)$}
+		\begin{center}
+		 $P(X < 4) = P(X \le 4) = F_x(4) = 1-e^{-4} \approx 0.98$
+		\end{center}
+		\begin{align*}
+			P(1 < X < 2.5) &= P(X \le 2.5) - P(X \le 1) \\
+			&= F_x(2.5) - F_x(1) \\
+			&= 1-e^{-2.5} -1 + e^{-1} \\
+			&= e^{-1}- e^{-2.5} \approx 0.29
+		\end{align*}
 	\end{subexo}
-	\begin{subexo}{Déterminer le nombre réel positif $x$ tel que $P(\X > x) = 0.1$}
+	\begin{subexo}{Déterminer le nombre réel positif $x$ tel que $P(X > x) = 0.1$}
+		\begin{align*}
+			P(X > x) &= 1 - P(X \le x) \\
+			&= 0.1 \\
+			&\iff \\
+			1-F_x(x) &= 0.1 \\
+			F_x(x) &= 0.9 \\
+			1-e^{-x} &= 0.9 \\
+			e^{-x} &= 0.1 \\
+			x & = -\ln{0.1} \approx 2.3 \\
+		\end{align*}
 	\end{subexo}
 \end{exo}
