@@ -1,0 +1,17 @@
+\begin{exo}\donnee{Considérons une variable aléatoire X dont la fonction de densité est donnée par $
+		\begin{cases}
+			1 & \text{si $0 < u < 1$ } \\
+			0 & \text{ sinon.} \\
+		\end{cases}$
+	Désignons par Y la variable aléatoire $ Y = e^{X}$. Déterminer l'espérance de Y.}
+\begin{center}
+	Par définition, l'espérance d'une fonction composée $E(Y(x)) = \displaystyle\int_{-\infty}^{\infty}{Y(u)\cdot f_x(u)}du$
+\end{center}
+\begin{align*}
+	E(Y) &= \displaystyle\int_{-\infty}^{\infty}{Y(u)\cdot f_x(u)}du \\
+	&= \displaystyle\int_{-\infty}^{\infty}{e^u\cdot f_x(u)}du \\
+	&= \displaystyle\int_{0}^{1}{e^u}du \\
+	&= e^u\bigg\vert_{0}^{1} \\
+	&= e-1
+\end{align*}
+\end{exo}
