@@ -1,3 +1,31 @@
 \begin{exo}
-  \donnee{}
+  \donnee{Une platforme petrolière a été construite à une hauteur de 8 mètres au 
+  dessus du niveau
+  de la mer. Selon les statistiques, les vagues atteignent le plateau de la plate-forme 
+  une année donnée avec probabilité 0.05. On admet que les vagues parviennent au plateau 
+  indépendamment des années}
+  \begin{subexo}{Déterminer la probabilité qu'a partir de cette année les vagues 
+    déferleront sur la plate-forme pour la première fois dans l'une des 
+    cinq prochaines années}
+    On se rappelle la théorie sur la loie géométrique et on se rappelle qu'elle compte le nombre
+    d'essaie necessaire avant d'avoir la première épreuve réussite.
+    Nous avons comme dans l'exercice précédent une suite d'épreuve indépendante avec une probabilité
+    1-p d'échouée. Définission p la probabilité que les vagues atteignent la platforme.
+    nous avons la probabilité que "les vagues atteignent la platforme dans les 5 prochaines années"
+    qui est égale à la proba qu'elle les atteignent l'année prochaine, ou qu'elle ne réussisent pas la première année, 
+    mais y arrivent l'année suivante, ou durant la troisième année(mais pas durant les deux premières)
+    etc.
+    Donc la proba vaut 
+    \[
+    0.05^1 + 0.95\cdot0.05 + 0.95^2\cdot0.05  + 0.95^3\cdot0.05  + 0.95^4\cdot0.05  
+    \]
+    Donc la proba = 0.226219
+  \end{subexo}
+  \begin{subexo}{En sachant que les vavues ne parviendront pas au plateau au minimum pendant les 
+    cinq prochaines années, cacluler la probabilité qu'elles déferleront sur la platforme pour la première fois exactement dans huit ans}
+    Les vagues n'ont pas de mémoire, donc la proba ne change pas en sachant que les 5 prochaines années les vagues ne dépasseront pas le niveau.
+    Ca revient à calculer la proba que durant les 3 prochaines années les vagues ne dépasseront pas le niveau
+    \[0.95^2 \cdot 0.05 = 0.045125\]
+    
+  \end{subexo}
 \end{exo}
