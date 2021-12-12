@@ -1,10 +1,43 @@
 \begin{exo}
-  \donnee{Une petite chenille descend doucement, lentement le long du grillage représenté dans la Figure 1. À chaque point gras de la figure appelé épissure, elle choisit la maille à votre gauche une fois sur trois, la maille à votre droite deux fois sur trois. La chenille descend quatre niveaux.}
-  \begin{subexo}{Déterminer la loi de probabilité de X i.e. les probabilités $P(X = x)$ avec $x = 0, 1, 2, 3, 4$.}
-    \begin{center}
-    \end{center}
+  \donnee{Une petite chenille descend doucement, lentement le long du grillage
+    représenté dans la Figure 1. À chaque point gras de la figure appelé épissure,
+    elle choisit la maille à votre gauche une fois sur trois, la maille à votre
+    droite deux fois sur trois. La chenille descend quatre niveaux.}
+  \begin{subexo}{Déterminer la loi de probabilité de X i.e. les probabilités
+      $P(X = x)$ avec $x = 0, 1, 2, 3, 4$.}
+    Nous voyons qu'à chaque épissure nous avons deux possibilités.
+    L'une avec $\frac{2}{3}$ de chance d'être pris et l'autre avec 1 tier.
+    Ainsi pour partir du départ et arriver à 0,
+    nous devons toujours prendre le chemin de droite donc la réalisation 0 arrive avec une
+    probabilité $(\frac{2}{3})^3 $ nous voyons la même chose avec la réalisation 4 où il faut prendre
+    à chaque fois choisir le chemin de gauche qui arrive avec une proba de $\frac{1}{3}$ indépendamment
+    des choix précédents.
+    Nous pouvons faire la même chose pour la $X = 1$. En effet il pour avoir cette réalisation de X,
+    il nous faut prendre 3 fois à droite et 1 fois à gauche. Cependant il faut noter
+    que la position de notre gauche peut être n'importe où dans le chemin.
+    Nous pouvons faire dddg ou ddgd ou dgdd ou gddd (d = droite et g = gauche)
+    et nous arrivons avec chaque chemin à la réalisation 1. Nous avons donc
+    4 possibilités. Pour $x = 2$ nous avons 2 gauches et 2 droites, nous devons donc dans notre chemin De
+    4 étapes placé nos deux gauches. il existe 6 possibilités de placer 2 objets parmis 4.
+    Nous comprenons maintenant qu'il s'agit d'une variable aléatoire discrète provenant d'une
+    \textbf{distribution binomiale}. Nous avons donc la lois de probabilité suivante :
+    \[\begin{tabular}{@{}l|lllll@{}}
+        X = x  & 0                                 & 1
+               & 2                                 & 3
+               & 4                                                                     \\ \midrule
+        P(X=x) & $(\frac{2}{3})^4$                 & $4(\frac{2}{3})(\frac{1}{3})$
+               & $6(\frac{2}{3})^2(\frac{1}{3})^2$ & $4(\frac{2}{3})^1(\frac{1}{3})^3$
+               & $(\frac{1}{3})^4$
+      \end{tabular}
+    \]
   \end{subexo}
-	\begin{subexo}{De quelle distribution est issue la variable aléatoire X ? Préciser ses paramètres.}´
-	\end{subexo}
-
+  \begin{subexo}{De quelle distribution est issue la variable aléatoire X ? 
+    Préciser ses paramètres.}
+  Comme dit précédement il s'agit d'une lois d'une\textbf{ distribution binomiale}
+  pour le voir il faut noter :
+  \begin{enumerate}[]
+    \item le fait d'avoir uniquement deux possibilités à chaque moment de \textit{"choix"}
+    \item la symétrie dans les probabilités 
+  \end{enumerate}
+  \end{subexo}
 \end{exo}
