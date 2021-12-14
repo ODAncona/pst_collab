@@ -1,3 +1,59 @@
 \begin{exo}
-  \donnee{}
+  \donnee{Un réseau de neurones, outil statistique, est utilisé pour reconnaitre les
+    caractères, par exemple les lettres de l'alphabet ou les chiffres arabes, dans un très
+    long texte manuscrit. On approche le nombre de caractères interprétés incorrectement
+    par le réseau de neurones par une variables aléatoire issue d'une distribution
+    de Poisson d'espérance 5}
+
+  \begin{subexo}{Calculer la probabilité qu'au plus 2 caractères d'un très long texte
+      donné soient transcrit incorrectement par le réseau de neurones.}
+    Avant de commencer la résolution, nous devons noter que \textbf{l'espérance} vaut 5.
+    Nous savons que dans ce cas (\textbf{variable de Poisson})
+    \[
+      \mathbb{E}(X) = \lambda \iff \lambda = 5
+    \]
+    Nous avons dans le cas d'une variable de Poisson
+    \[
+      P(X=x) = e^{-\lambda} \cdot \frac{\lambda^x}{x!}
+    \]
+    Et nous voulons calculer $P(X \le 2)$
+    Nous sommes dans un cas \textit{discret} donc nous pouvons
+    énumerer les possibilités $\le 2$.
+    \begin{align*}
+      P(X\le 2) = & P(X=0) + P(X=1) + P(X=2)                                                                                             \\
+      =           & e^{-5} \cdot \frac{5^0}{0!} + e^{-5} \cdot \frac{5^1}{1!} + e^{-5} \cdot \frac{5^0}{0!} + e^{5} \cdot \frac{5^2}{2!} \\
+      =           & \frac{2}{2} \cdot e^{-5} + \frac{10}{2}  \cdot e^{-5} + \frac{25}{2}\cdot e^{-5}                                     \\
+      =           & \frac{37}{2}e^{-5}
+    \end{align*}
+  \end{subexo}
+  \begin{subexo}{En sachant que le réseau de neurones a déjà interprété incorrectement au moins un caractère
+      d'un très long texte donné, déterminer la probabilité qu'exactement 2 caractères soient
+      transcrits incorrectement}
+
+    \begin{equation}
+      P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+    \end{equation}
+    Et
+    \begin{equation}
+      P(A|B) = \frac{P(A \cap B)}{P(B)}
+    \end{equation}
+
+    Nous avons des probabilité conditionelles puisqu'il y a le fameux "en sachant".
+    Sous forme mathématique, nous avons:
+
+    \[
+      P(X=2 | X\ge 1) = \frac{P(X\ge 1 | X=2) \cdot P(X=2)}{P(X\ge 1)}
+    \]
+    \\
+
+    Cependant, $P(X\ge 1 | X=2)$ vaut 1 et $P(X\ge 1)$ au dénominateur vaut $1-P(X < 1) = 1-P(X=0)$
+    Donc nous avons 
+    \begin{align}
+      P(X=2 | X\ge 1) &= \frac{P(X\ge 1 | X=2) \cdot P(X=2)}{P(X\ge 1)}\\
+      &= \frac{P(X=2)}{1- P(X=0)}\\
+      &= \frac{e^{-5}\cdot \frac{25}{2}}{1-e^{-5}} = \frac{25\cdot e^{-5}}{2(1-e^{-5})}
+      = \frac{25\cdot e^{-5}}{2e^{-5}(\frac{1}{e^{-5}} -1)}\\
+      &= \frac{25}{2(e^{5}-1)}
+    \end{align}
+  \end{subexo}
 \end{exo}
