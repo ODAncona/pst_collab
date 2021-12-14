@@ -1,0 +1,39 @@
+
+\begin{exo}
+  \donnee{Le système informatique d’une petite PME est formé de deux serveurs indépendants. On suppose que la
+  	durée de vie (temps écoulé avant un crash) de chacun d’eux peut être modélisée par une variable aléatoire
+  	issue d’une distribution exponentielle. La durée de vie espérée de chacun des deux serveurs est de 150
+  	jours.}
+ 
+ \begin{subexo}{Calculer la probabilité que l’un des deux serveurs indépendamment de l’autre fonctionne pendant au moins 100 jours.}
+ 	Formule de répartition d'une distribution exponentielle (formulaire):
+ 		\begin{center}
+ 		$ F_x(x) =\begin{cases}
+ 		0 & \text{si $x < 0$} \\
+ 		1 - e^{-\lambda x} & \text{si $x \geq 0$} \\
+ 		\end{cases}$
+ 		\end{center}
+ 	La durée de vie espérée est de 150 jours (donnée), donc: 
+ 		\begin{center}
+ 			$\mathbb{E} = 150$ \\ 
+ 			et 	pour une distribution exponentielle, l'espérance vaut \\ 
+ 			$\mathbb{E} = \frac{1}{\lambda}$ donc $\lambda = \frac{1}{150}$ donc, 
+ 			
+ 			\begin{align*}
+ 			P(x > 100) &= 1 - P(x \le 100) \\
+ 			&= 1 - (1 - e^{-\frac{1}{\lambda}x})  \\
+ 			&= 1 - (1 - e^{-\frac{1}{150}100})  \\
+ 			&= 1 - (1 - e^{-\frac{100}{150}})  \\
+ 			&= 1 - (1 - e^{-\frac{10}{15}})  \\
+ 			&= e^{-\frac{2}{3}}  \\
+ 			\end{align*}
+ 		\end{center}
+ \end{subexo}
+  \begin{subexo}{Déterminer la probabilité que les deux serveurs fonctionnent ensemble et simultanément pendant au moins 100 jours.}
+  	On cherche P($x_1 \geq 100$ et $x_2  \geq 100$) \\
+  	Comme les deux serveurs sont indépendants, $f_{x_1,x_2} = f_{x_1}(u)*f_{x_2}(u)$ et donc :\\
+		\begin{center}
+			$e^{-2/3} * e^{-2/3} = e^{4/3}$
+		\end{center}
+  \end{subexo}
+\end{exo}
