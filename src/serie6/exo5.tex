@@ -20,16 +20,16 @@ On suppose que ces variables aléatoires sont toutes issues d'une distribution n
 			\end{enumerate}
 		Dès lors, nous pouvons décrire chaque distribution comme:
 		  \begin{enumerate}
-			\item $X_1 \sim N\left(3, (0.6)^2\right)$
-			\item $X_2 \sim N\left(5, (1)^2\right)$
-			\item $X_3 \sim N\left(4, (0.8)^2\right)$
-			\item $X_4 \sim N\left(2, (0.4)^2\right)$
+			\item $X_1 \sim \N\left(3, (0.6)^2\right)$
+			\item $X_2 \sim \N\left(5, (1)^2\right)$
+			\item $X_3 \sim \N\left(4, (0.8)^2\right)$
+			\item $X_4 \sim \N\left(2, (0.4)^2\right)$
 		\end{enumerate}
 		\end{center}
 	\end{subexo}	
 	\begin{subexo}{Calculer la probabilité que le trajet entre la ville A et B via C dure moins de 9 heures.}
 		\begin{center}
-			Définissons: $T_1 = X_1 + X_2 \sim N(\mu_1 + \mu_2, \sigma_1^2 + \sigma_2^2) = N(8,1.36)$
+			Définissons: $T_1 = X_1 + X_2 \sim \N(\mu_1 + \mu_2, \sigma_1^2 + \sigma_2^2) = \N(8,1.36)$
 		\end{center}
 		\begin{align*}
 			P(A \rightarrow B \rightarrow C \leq 9) &= P(X_1 + X_2 \leq 9) \\
@@ -42,10 +42,10 @@ On suppose que ces variables aléatoires sont toutes issues d'une distribution n
 	\end{subexo}
 	\begin{center}
 		Commençons par calculer $T_2$ de la même manière que $T_1$, \\
-		$T_1 \sim N\left(8,0.6^2 + 1^2\right) = N(8,1.36)$ \\
-		$T_2 \sim N\left(6,0.4^2 + 0.8^2\right) = N(6,0.8)$ \\
+		$T_1 \sim \N\left(8,0.6^2 + 1^2\right) = \N(8,1.36)$ \\
+		$T_2 \sim \N\left(6,0.4^2 + 0.8^2\right) = \N(6,0.8)$ \\
 		Alors, (attention pas évident)\\
-		$T = T_1 - T_2 \sim N\left(8-6, 1.36 + 0.8\right) = N(2,2.16)$
+		$T = T_1 - T_2 \sim \N\left(8-6, 1.36 + 0.8\right) = \N(2,2.16)$
 	\end{center}
 		Ensuite, centrons et réduisons la probabilité cherchée $P(T < 0)$ sans oublier de centrer réduire.
 		\begin{align*}
