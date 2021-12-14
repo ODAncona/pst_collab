@@ -1,5 +1,35 @@
 \begin{exo}
-  \donnee{Supposons que le temps d'attente d'un bus à un arrêt donné entre 8h00 et 8h30 peut être modélisé par une variable aléatoire issue d'une distribution uniforme. Gaston est arrivé à cet arrêt à 8h00.}
-	\begin{subexo}{}
+	\donnee{Supposons que le temps d'attente d'un bus à un arrêt donné entre 8h00 et 8h30 peut être modélisé par une variable aléatoire issue d'une distribution uniforme. Gaston est arrivé à cet arrêt à 8h00.}
+	\begin{subexo}{Calculer la probabilité que Gaston doive attendre plus de 10 minutes}
+		Nous avons ici une distribution uniforme $\sim \mathcal{U}(0,30)$ attention à ne
+		pas la confondre avec une lois normal ($\sim \mathcal{N}$). Les paramètres de $\mathcal{U}$
+		sont le début et la fin de l'interval dans lequel X prend ses valeurs càd $X=x, x \in [a,b]$.
+		\begin{enumerate}
+			\item $a$ = 0
+			\item $b$ = 30
+			\item $x \in [0,30] \text{ et } x = 10 \text{ selon la donnée}$
+		\end{enumerate}
+		\[
+			P(X > 10) = 1 - P(X < 10) = 1 - \frac{10 - 0}{30 - 0} = \frac{2}{3}
+		\]
+		Puisque pour les variable aléatoire \textbf{\textit{continue}}, $P(X=x_i) = 0$,
+		nous n'avons pas besoins de prendre en compte $P(X=10)$ donc il n'est pas nécesaire de changer l'inégalité
+	\end{subexo}
+	\begin{subexo}{En sachant que le bus n'est pas encore arrivé à 8h15, déterminer la probabilité
+			que Gaston doive encore attendre au moins 10 minutes supplémentaires.}
+		Il y a "en sachant", donc posons comme d'habitude nos règles:
+		\begin{align}
+			 & P(A | B) = \frac{P(B|A) P(A)}{P(B)} \\
+			 & P(A | B) = \frac{P(A \cap B)}{P(B)}
+		\end{align}
+		Mathématiquement la donnée s'écrit de la manière suivante et en utilisant (1) peut se ré-écrire:
+		\[
+			P(X>25 | X>15) = \frac{P\bigl(X>15 \;\bigl|\;X>25\bigr) \cdot P(X>25)}{P(X>15)}
+		\]
+		Cependant, nous savons que $P(X>15 | X>25) = 1$ donc :
+		\[
+			P(X>25 | X>15) = \frac{P(X>25)}{P(X>15)} = \frac{1 - P(X<25)}{1-P(X<15)} = 
+			\frac{1-\frac{25-0}{30-0}}{1-\frac{15-0}{30-0}} = \frac{1}{3}
+		\]	
 	\end{subexo}
 \end{exo}
