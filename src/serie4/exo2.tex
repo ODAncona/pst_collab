@@ -1,3 +1,47 @@
 \begin{exo}
-  \donnee{}
+  \donnee{Un signal transmis par un canal est reçu sans erreur avec une probabilité de 0.9.
+    On suppose que les transmissions sont indépendantes les une des autres}
+  \begin{subexo}{Calculer la probabilité que parmi les 20 signaux transmis, plus de deux
+      signaux soient reçus avec erreur }
+    En se rappelant la théorie, on sait que la loi binomiale compte le nombre de succès
+    parmis n épreuves indépendantes.
+    Comme dans les séries précédentes, on voit "plus de/que" il faut donc faire
+    1 - le complémentaire de nos évènements puisque toutes nos lois permettent de calculer
+    $P(X < x_i)$
+    Appelons A l'évenement "avoir plus de deux erreurs".
+    Plus explicitement nous devons calculer :
+    \begin{align*}
+      1 & - P("\text{avoir exactement 0 erreur}")  \\
+        & - P("\text{avoir exactement 1 erreur"})  \\
+        & - P("\text{avoir exactement 2 erreurs}") \\
+      \\
+        & = P(A)
+    \end{align*}
+    \[
+      P(A) = 1 - \binom{20}{0} \cdot 0.9^{20}(0.1)^0
+      - \binom{20}{1}(0.9)^{19}(0.1)^1
+      - \binom{20}{2}(0.9)^{18}(0.1)^{2}
+      \\ = 0.32
+    \]
+  \end{subexo}
+  \begin{subexo}{Déterminer la probabilité que le cinquième signal transmis soit le premier signal reçu avec une erreur}
+    Il s'agit de la probabilité que le premier soit reçu sans erreur ET que le second le soit aussi $\cdots$ ET que le 5iem soit recu AVEC erreur
+    Donc, comme les événements sont indépendants nous pouvons multiplier les probabilités.
+    Nous n'avons pas de coefficient devant puisque nous avons un seul arrangement possible
+    pour avoir 4 justes suivit d'un faux
+    \[
+      \underbrace{0.9 \cdot 0.9 \cdot 0.9 \cdot 0.9 \cdot}_{\text{proba que les 4 premiers soit justes}} 0.1
+      \\ = 0.06561
+    \]
+
+  \end{subexo}
+  \begin{subexo}{Calculer la probabilité que le dixième signal
+      transmis soit le quatrième signal re4u avec erreur.}
+    Nous avons donc 9 signaux transmis dont 3 avec erreurs suivit d'un signal avec une erreur
+    \[
+      \underbrace{\binom{9}{3}(0.9)^6 \cdot (0.1)^3}_{\text{9 signaux dont 3 avec erreurs}} 
+      \cdot \overbrace{0.1}^{\text{une erreur}}
+    \]
+    la proba vaut donc 0.004464
+  \end{subexo}
 \end{exo}
