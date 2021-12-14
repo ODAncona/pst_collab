@@ -1,3 +1,91 @@
 \begin{exo}
-  \donnee{}
+  \donnee{Un serveur de calcul reçoit des requêtes à fréquence régulière.
+    Elles sont traitées indépendamment les
+    unes aprés les autres dans leur ordre d’arrivée. On suppose que le nombre de
+    requêtes par minute qui
+    arrivent au serveur peut être modélisé par un processus de Poisson.
+    Les requêtes sont envoyées vers le
+    serveur à un rythme moyen de 6 requêtes par minute.}
+
+  \begin{subexo}{Déterminer la probabilité qu'en l'espace d'une minute et demi,
+      au moins deux reqêtes arrivent au server.}
+    Nous sommes dans le cas d'un processus de poisson. Donc
+    \[
+      P(N(t) = x) = e^{-\lambda t} \cdot \frac{(\lambda t)^x}{x!}
+    \]
+    Où
+    \begin{enumerate}
+      \item $N(t)$ compte le nombre d'occurence = 2
+      \item $\lambda$ est la fréquence d'occurence de l'événement observé = 6 par minutes
+      \item $t$ est le temps durant lequel on compte le nombre d'occurence  = 1.5 minutes
+    \end{enumerate}
+    Au vu de l'énoncé "au moins" nous savons que nous devons faire le complémentaire puisque nos
+    lois de probabilité nous informent toujours sur $P(X < x)$.
+    \begin{align*}
+      P(N(1.5) \ge 2) = & 1 - \overline{P(N(1.5) \ge 2)} \\
+      =                 & 1 - P(N(1.5) < 2)
+    \end{align*}
+    Comme nous sommes dans un cas discret, nous avons :
+    \[
+      P(N(1.5) < 2) = P(N(1.5) = 0) + P(N(1.5) = 1)
+    \]
+    et donc
+    \begin{align*}
+      P(N(1.5) \ge 2) = & 1 - P(N(1.5) = 0) - P(N(1.5) = 1)                                                                         \\
+      =                 & 1 - e^{-6 \cdot 1.5} \cdot \frac{(6 \cdot 1.5)^0}{0!} - e^{-6 \cdot 1.5 } \cdot \frac{(6\cdot 1.5)^1}{1!} \\
+      =                 & 1- e^{-6 \cdot 1.5} - 9 \cdot e^{-6 \cdot 1.5}                                                            \\
+      =                 & 1- 10e^{-9}
+    \end{align*}
+  \end{subexo}
+  \begin{subexo}{En sachant que les deux requêtes sont arrivées en l'espace d'une minute, calculer
+      la probabilité qu'elles soient toutes les deux arrivées dans les 20 premières secondes}
+
+    Nous voyons ici le fameux "en sachant" qui nous dit d'utiliser bayes.
+    \[
+      P\biggl( N(t_1) = 2 \biggl| N(t_2) = 2\biggr)
+    \]
+    \begin{enumerate}
+      \item $t_1$ = 20 secondes = $\frac{1}{3}$ minutes
+      \item $t_2$ = 1 minute
+    \end{enumerate}
+    Nous mettons tout en minutes pour avoir des unités cohérente par rapport à notre $\lambda$ qui est en minute
+    \begin{equation*}
+      P\biggl( N(1/3) = 2 \biggl| N(1) = 2\biggr)
+      % = & P\biggl( e^{-6 \cdot 1/3} \cdot \frac{(6 \cdot 1/3)^2}{2 !} \biggl|
+      % e^{-6 \cdot 1} \cdot \frac{(6 \cdot 1)^2}{2 !}  \biggr)
+    \end{equation*}
+    Avec
+    \begin{align*}
+       & P(N(1/3) = 2) = e^{-6 \cdot 1/3} \cdot \frac{(6 \cdot 1/3)^2}{2 !} \\
+       & P(N(1) = 2) = e^{-6 \cdot 1} \cdot \frac{(6 \cdot 1)^2}{2 !}
+    \end{align*}
+
+    $N(t_1) = 2$ n'est pas compris dans $N(t_2) = 2$ puisque si les requêtes
+    arrivent dans les 20 premières secondes, elles sont forcément dans la première minute
+    mais la minute n'a pas reçu uniquement 2 requêtes.
+    En effet, il peut encore survenir des requêtes durant les 40 secondes suivantes faisant que
+    l'évènement $N(t_1) = 2$ s'est réalisé sans que $N(t_2) = 2$ se soit réalisé puisque il y
+    aurait eu 3 requêtes ou plus durant la minute avec deux durant les 20 premières secondes.
+    Posons A = $(N(1/3) = 2)$ et B = $ (N(1) = 2)$.
+    Nous avons $P( A | B)$ = $\frac{P(A \cap B)}{P(B)}$ et
+    \[P(A \cap B) = P(N(1/3) = 2) \cdot \underbrace{P(N(2/3)= 0)}_{\textbf{0 requêtes en 40 [s]}}\]
+    \begin{equation*}
+      P\biggl( N(1/3) = 2 \biggl| N(1) = 2\biggr) 
+      =\frac{P(N(1/3) = 2)\cdot P(N(2/3)= 0)}
+          {P(N(1) = 2)} 
+          \\
+      = \frac{ e^{-6 \cdot 1/3} \cdot \frac{(6 \cdot 1/3)^2}{2 !} \cdot e^{-6\cdot 2/3}\cdot \frac{(6*2/3)^0}{0!}}{ e^{-6 \cdot 1} \cdot \frac{(6 \cdot 1)^2}{2 !} }
+    \end{equation*}
+    Et ainsi
+    \[
+      P\biggl( N(t_1) = 2 \biggl| N(t_2) = 2\biggr) = \frac{e^{-2}\cdot 2 \cdot e^{-4}}{e^{-6}\cdot 18} = \frac{e^{-4}\cdot 1}{e^{-4}\cdot 9} = \frac{\textbf{1}}{\textbf{9}}
+    \]
+    Une autre manière de faire est la suivante :
+    \[
+      P\biggl(N(1/3)=2 \biggl| N(1)=2 \biggr)= \frac{\mathbf{P\bigl( N(1)=2 | N(1/3)=2\bigr)} \cdot P(N(1/3)=2)}{P(N(1)=2)}
+    \]
+    et la probabilité qu'il y aille deux requêtes en 1 minutes sachant qu'il y en a déjà eu deux en 20 secondes
+    c'est egal à la probabilité qu'il n'y en aille 0 en 40 secondes. Donc
+    \[ \frac{\mathbf{P(N(2/3)=0)} \cdot P( N(1/3) = 2)}{P(N(1)=2)} = \frac{1}{9}\]
+  \end{subexo}
 \end{exo}
